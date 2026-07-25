@@ -1,5 +1,5 @@
 import { logger } from '../utils/logger.js';
-import { MyStack, SecretMasker } from '@mystack/sdk';
+import { MyStack, SecretMasker } from '@cshah-mystack/sdk';
 
 export async function authSetKeyCommand(key: string, value: string): Promise<void> {
   logger.banner('MyStack Auth Manager', `Configuring secret key: ${key.toUpperCase()}`);

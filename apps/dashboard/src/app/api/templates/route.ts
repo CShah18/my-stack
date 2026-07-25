@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 export async function GET() {
   try {
-    const { MyStack } = await import('@mystack/sdk');
+    const { MyStack } = await import('@cshah-mystack/sdk');
     const mystack = await MyStack.init({ root: process.cwd() });
     const templates = mystack.listTemplates();
     return NextResponse.json({ templates });

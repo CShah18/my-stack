@@ -1,7 +1,7 @@
 {
-  "name": "@mystack/workflow-engine",
+  "name": "@cshah-mystack/workflow-engine",
   "version": "0.1.1",
-  "description": "Workflow execution state machine and failure recovery engine for MyStack",
+  "description": "State machine execution engine for MyStack multi-agent workflows",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -16,8 +16,8 @@
     "mystack",
     "ai",
     "workflow",
-    "engine",
-    "state-machine"
+    "state-machine",
+    "engine"
   ],
   "publishConfig": {
     "access": "public"
@@ -43,8 +43,8 @@
     "clean": "node -e \"require('fs').rmSync('dist', { recursive: true, force: true })\""
   },
   "dependencies": {
-    "@mystack/core": "workspace:*",
-    "@mystack/orchestrator": "workspace:*"
+    "@cshah-mystack/core": "workspace:*",
+    "@cshah-mystack/orchestrator": "workspace:*"
   },
   "devDependencies": {
     "tsup": "^8.3.6",

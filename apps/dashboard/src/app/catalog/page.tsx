@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { SkillDefinition, RuleDefinition, TemplateDefinition } from '@mystack/core';
+import { SkillDefinition, RuleDefinition, TemplateDefinition } from '@cshah-mystack/core';
 import { Badge } from '@/components/Badge';
 
 export default function CatalogPage() {

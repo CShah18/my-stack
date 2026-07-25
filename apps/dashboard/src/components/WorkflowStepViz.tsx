@@ -1,4 +1,4 @@
-import { WorkflowStep, StepExecution } from '@mystack/core';
+import { WorkflowStep, StepExecution } from '@cshah-mystack/core';
 import { Badge } from './Badge';
 
 interface WorkflowStepVizProps {

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { AgentDefinition } from '@mystack/core';
+import { AgentDefinition } from '@cshah-mystack/core';
 import { AgentCard } from '@/components/AgentCard';
 import { AgentGraphViz } from '@/components/AgentGraphViz';
 import { Badge } from '@/components/Badge';

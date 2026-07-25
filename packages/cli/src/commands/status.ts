@@ -1,5 +1,5 @@
 import { logger } from '../utils/logger.js';
-import { MyStack } from '@mystack/sdk';
+import { MyStack } from '@cshah-mystack/sdk';
 
 export async function statusCommand(executionId: string): Promise<void> {
   logger.banner('MyStack Execution Status', `Checking execution: ${executionId}`);
@@ -10,7 +10,7 @@ export async function statusCommand(executionId: string): Promise<void> {
 
     if (!execution) {
       // Try memory store lookup
-      const stored = await mystack.getMemoryStore().get<import('@mystack/core').ExecutionContext>(
+      const stored = await mystack.getMemoryStore().get<import('@cshah-mystack/core').ExecutionContext>(
         `execution_${executionId}`,
       );
       if (stored) {

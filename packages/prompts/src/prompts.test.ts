@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { PromptEngine } from './index.js';
-import { PromptTemplate } from '@mystack/core';
+import { PromptTemplate } from '@cshah-mystack/core';
 
 describe('PromptEngine', () => {
   const engine = new PromptEngine();

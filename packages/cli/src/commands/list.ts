@@ -1,5 +1,5 @@
 import { logger } from '../utils/logger.js';
-import { MyStack } from '@mystack/sdk';
+import { MyStack } from '@cshah-mystack/sdk';
 
 export async function listCommand(assetType?: string): Promise<void> {
   const type = (assetType ?? 'agents').toLowerCase();

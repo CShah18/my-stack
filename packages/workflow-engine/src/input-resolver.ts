@@ -1,4 +1,4 @@
-import { StepInput, ExecutionContext } from '@mystack/core';
+import { StepInput, ExecutionContext } from '@cshah-mystack/core';
 
 export class InputResolver {
   public resolve(inputSpec: StepInput, context: ExecutionContext): unknown {

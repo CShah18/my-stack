@@ -1,6 +1,6 @@
 import { EventEmitter } from 'node:events';
-import { WorkflowDefinition, ExecutionContext } from '@mystack/core';
-import { AgentOrchestrator } from '@mystack/orchestrator';
+import { WorkflowDefinition, ExecutionContext } from '@cshah-mystack/core';
+import { AgentOrchestrator } from '@cshah-mystack/orchestrator';
 import { WorkflowEventType, WorkflowEventPayloads } from './types.js';
 import { WorkflowStateMachine } from './state-machine.js';
 import { InputResolver } from './input-resolver.js';

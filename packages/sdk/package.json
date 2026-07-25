@@ -1,7 +1,7 @@
 {
-  "name": "@mystack/sdk",
+  "name": "@cshah-mystack/sdk",
   "version": "0.1.1",
-  "description": "Unified TypeScript SDK for MyStack AI Engineering Operating System",
+  "description": "Unified SDK facade for MyStack AI Engineering Operating System",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -15,10 +15,9 @@
   "keywords": [
     "mystack",
     "ai",
-    "sdk",
     "agent",
-    "workflow",
-    "operating-system"
+    "framework",
+    "sdk"
   ],
   "publishConfig": {
     "access": "public"
@@ -44,11 +43,11 @@
     "clean": "node -e \"require('fs').rmSync('dist', { recursive: true, force: true })\""
   },
   "dependencies": {
-    "@mystack/core": "workspace:*",
-    "@mystack/memory": "workspace:*",
-    "@mystack/orchestrator": "workspace:*",
-    "@mystack/prompts": "workspace:*",
-    "@mystack/workflow-engine": "workspace:*"
+    "@cshah-mystack/core": "workspace:*",
+    "@cshah-mystack/memory": "workspace:*",
+    "@cshah-mystack/orchestrator": "workspace:*",
+    "@cshah-mystack/prompts": "workspace:*",
+    "@cshah-mystack/workflow-engine": "workspace:*"
   },
   "devDependencies": {
     "tsup": "^8.3.6",

@@ -2,7 +2,7 @@ import { Badge } from '@/components/Badge';
 
 async function getSettingsData() {
   try {
-    const { MyStack, SecretMasker } = await import('@mystack/sdk');
+    const { MyStack, SecretMasker } = await import('@cshah-mystack/sdk');
     const mystack = await MyStack.init({ root: process.cwd() });
     const config = mystack.getConfig();
     const agents = await mystack.loadAgents();

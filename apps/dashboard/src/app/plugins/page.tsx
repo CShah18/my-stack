@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { PluginDefinition } from '@mystack/core';
+import { PluginDefinition } from '@cshah-mystack/core';
 import { Badge } from '@/components/Badge';
 
 export default function PluginsPage() {

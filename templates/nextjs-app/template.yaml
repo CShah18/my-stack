@@ -31,7 +31,7 @@ files:
           "next": "^15.0.0",
           "react": "^19.0.0",
           "react-dom": "^19.0.0",
-          "@mystack/sdk": "latest"
+          "@cshah-mystack/sdk": "latest"
         },
         "devDependencies": {
           "typescript": "^5.7.0",

@@ -1,5 +1,5 @@
 import { logger } from '../utils/logger.js';
-import { MyStack } from '@mystack/sdk';
+import { MyStack } from '@cshah-mystack/sdk';
 
 export async function templateListCommand(): Promise<void> {
   logger.banner('MyStack Template Library', 'Available project scaffolds');

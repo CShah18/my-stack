@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { MyStack } from '@mystack/sdk';
+import { MyStack } from '@cshah-mystack/sdk';
 
 export async function POST(req: NextRequest) {
   try {

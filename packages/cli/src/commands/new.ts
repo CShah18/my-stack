@@ -7,7 +7,7 @@ import {
   generateWorkflowTemplate,
   generateRuleTemplate,
 } from '../utils/templates.js';
-import { MyStack, TemplateEngine } from '@mystack/sdk';
+import { MyStack, TemplateEngine } from '@cshah-mystack/sdk';
 
 export async function newCommand(type: string, name: string): Promise<void> {
   const assetType = type.toLowerCase();

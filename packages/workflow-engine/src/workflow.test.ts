@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { WorkflowEngine } from './index.js';
-import { AgentOrchestrator } from '@mystack/orchestrator';
-import { WorkflowDefinition, AgentDefinition } from '@mystack/core';
+import { AgentOrchestrator } from '@cshah-mystack/orchestrator';
+import { WorkflowDefinition, AgentDefinition } from '@cshah-mystack/core';
 
 describe('WorkflowEngine', () => {
   const mockAgent: AgentDefinition = {

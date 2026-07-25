@@ -1,4 +1,4 @@
-import { ExecutionStatus } from '@mystack/core';
+import { ExecutionStatus } from '@cshah-mystack/core';
 
 export class WorkflowStateMachine {
   private allowedTransitions: Record<ExecutionStatus, ExecutionStatus[]> = {

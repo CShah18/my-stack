@@ -1,4 +1,4 @@
-import { PromptTemplate } from '@mystack/core';
+import { PromptTemplate } from '@cshah-mystack/core';
 import { PromptCompiler } from './compiler.js';
 
 export * from './compiler.js';

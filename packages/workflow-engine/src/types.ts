@@ -1,4 +1,4 @@
-import { WorkflowDefinition, ExecutionContext, WorkflowStep } from '@mystack/core';
+import { WorkflowDefinition, WorkflowStep, StepExecution, ExecutionContext } from '@cshah-mystack/core';
 
 export type WorkflowEventType =
   | 'workflow:start'

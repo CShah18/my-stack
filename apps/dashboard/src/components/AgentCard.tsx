@@ -1,4 +1,4 @@
-import { AgentDefinition } from '@mystack/core';
+import { AgentDefinition } from '@cshah-mystack/core';
 import { Badge } from './Badge';
 
 interface AgentCardProps {

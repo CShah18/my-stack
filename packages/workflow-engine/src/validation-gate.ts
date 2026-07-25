@@ -1,4 +1,4 @@
-import { StepValidation, StepExecution } from '@mystack/core';
+import { StepValidation, StepExecution } from '@cshah-mystack/core';
 
 export interface ValidationGateResult {
   passed: boolean;

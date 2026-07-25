@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { AgentOrchestrator } from './index.js';
-import { AgentDefinition, ExecutionContext } from '@mystack/core';
+import { AgentDefinition, ExecutionContext } from '@cshah-mystack/core';
 
 describe('AgentOrchestrator', () => {
   const mockAgent: AgentDefinition = {

@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 async function getOverviewData() {
   try {
-    const { MyStack } = await import('@mystack/sdk');
+    const { MyStack } = await import('@cshah-mystack/sdk');
     const mystack = await MyStack.init({ root: process.cwd() });
     const config = mystack.getConfig();
     const assets = await mystack.loadAllAssets();

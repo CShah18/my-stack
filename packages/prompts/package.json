@@ -1,7 +1,7 @@
 {
-  "name": "@mystack/prompts",
+  "name": "@cshah-mystack/prompts",
   "version": "0.1.1",
-  "description": "Prompt compilation, variable interpolation, and templating engine for MyStack",
+  "description": "Prompt compiler and template variable engine for MyStack",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -15,8 +15,8 @@
   "keywords": [
     "mystack",
     "ai",
-    "prompts",
-    "templates",
+    "prompt",
+    "template",
     "compiler"
   ],
   "publishConfig": {
@@ -43,7 +43,7 @@
     "clean": "node -e \"require('fs').rmSync('dist', { recursive: true, force: true })\""
   },
   "dependencies": {
-    "@mystack/core": "workspace:*"
+    "@cshah-mystack/core": "workspace:*"
   },
   "devDependencies": {
     "tsup": "^8.3.6",

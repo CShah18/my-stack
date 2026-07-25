@@ -30,7 +30,7 @@ files:
         "dependencies": {
           "express": "^5.0.0",
           "zod": "^3.24.0",
-          "@mystack/sdk": "latest"
+          "@cshah-mystack/sdk": "latest"
         },
         "devDependencies": {
           "typescript": "^5.7.0",

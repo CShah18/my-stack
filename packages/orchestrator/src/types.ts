@@ -1,4 +1,4 @@
-import { AgentDefinition, StepExecution, ExecutionContext } from '@mystack/core';
+import { AgentDefinition, StepExecution, ExecutionContext } from '@cshah-mystack/core';
 
 export type AgentHandler = (
   agent: AgentDefinition,

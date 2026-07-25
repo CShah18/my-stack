@@ -20,17 +20,17 @@ import {
   SecretsProvider,
   EnvSecretsProvider,
   SecurityAuditEntry,
-} from '@mystack/core';
-import { AgentOrchestrator, OrchestratorOptions } from '@mystack/orchestrator';
-import { WorkflowEngine } from '@mystack/workflow-engine';
-import { FileStore, MemoryStore } from '@mystack/memory';
-import { PromptEngine } from '@mystack/prompts';
+} from '@cshah-mystack/core';
+import { AgentOrchestrator, OrchestratorOptions } from '@cshah-mystack/orchestrator';
+import { WorkflowEngine } from '@cshah-mystack/workflow-engine';
+import { FileStore, MemoryStore } from '@cshah-mystack/memory';
+import { PromptEngine } from '@cshah-mystack/prompts';
 
-export * from '@mystack/core';
-export * from '@mystack/orchestrator';
-export * from '@mystack/workflow-engine';
-export * from '@mystack/memory';
-export * from '@mystack/prompts';
+export * from '@cshah-mystack/core';
+export * from '@cshah-mystack/orchestrator';
+export * from '@cshah-mystack/workflow-engine';
+export * from '@cshah-mystack/memory';
+export * from '@cshah-mystack/prompts';
 
 export interface MyStackInitOptions {
   root: string;

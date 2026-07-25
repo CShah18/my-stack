@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { WorkflowDefinition, ExecutionContext, SecurityAuditEntry } from '@mystack/core';
+import { WorkflowDefinition, ExecutionContext, SecurityAuditEntry } from '@cshah-mystack/core';
 import { WorkflowStepViz } from '@/components/WorkflowStepViz';
 import { Badge } from '@/components/Badge';
 

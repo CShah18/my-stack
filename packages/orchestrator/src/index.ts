@@ -1,4 +1,4 @@
-import { AgentDefinition, StepExecution, ExecutionContext } from '@mystack/core';
+import { AgentDefinition, StepExecution, ExecutionContext } from '@cshah-mystack/core';
 import { AgentHandler, Middleware } from './types.js';
 import { OrchestratorEventBus } from './event-bus.js';
 import { loggingMiddleware } from './middleware/logging.js';

@@ -1,5 +1,6 @@
 import { mkdir, writeFile, stat } from 'node:fs/promises';
 import { join, resolve } from 'node:path';
+import { MyStack } from '@cshah-mystack/sdk';
 import { logger } from '../utils/logger.js';
 import { generateConfigTemplate } from '../utils/templates.js';
 

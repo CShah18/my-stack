@@ -1,4 +1,4 @@
-import { AgentDefinition, StepExecution, ExecutionContext, PermissionScope, SecurityAuditEntry } from '@mystack/core';
+import { AgentDefinition, StepExecution, ExecutionContext, PermissionScope, SecurityAuditEntry } from '@cshah-mystack/core';
 import { Middleware } from '../types.js';
 
 export const securityMiddleware: Middleware = async (

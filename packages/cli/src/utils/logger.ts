@@ -1,27 +1,27 @@
-import chalk from 'chalk';
+import pc from 'picocolors';
 import ora, { Ora } from 'ora';
 
 export class Logger {
   public info(message: string): void {
-    console.log(`${chalk.blue('ℹ')} ${message}`);
+    console.log(`${pc.blue('ℹ')} ${message}`);
   }
 
   public success(message: string): void {
-    console.log(`${chalk.green('✔')} ${message}`);
+    console.log(`${pc.green('✔')} ${message}`);
   }
 
   public warn(message: string): void {
-    console.log(`${chalk.yellow('⚠')} ${message}`);
+    console.log(`${pc.yellow('⚠')} ${message}`);
   }
 
   public error(message: string): void {
-    console.error(`${chalk.red('✖')} ${message}`);
+    console.error(`${pc.red('✖')} ${message}`);
   }
 
   public banner(title: string, subtitle?: string): void {
-    console.log(`\n${chalk.bold.magenta('⚡ ' + title)}`);
+    console.log(`\n${pc.bold(pc.magenta('⚡ ' + title))}`);
     if (subtitle) {
-      console.log(chalk.gray(subtitle));
+      console.log(pc.gray(subtitle));
     }
     console.log('');
   }
@@ -35,7 +35,7 @@ export class Logger {
 
   public table(headers: string[], rows: string[][]): void {
     if (rows.length === 0) {
-      console.log(chalk.gray('  No items found.'));
+      console.log(pc.gray('  No items found.'));
       return;
     }
 
@@ -44,10 +44,10 @@ export class Logger {
     );
 
     const headerLine = headers
-      .map((h, i) => chalk.bold(h.padEnd(colWidths[i]! + 2)))
+      .map((h, i) => pc.bold(h.padEnd(colWidths[i]! + 2)))
       .join('');
     console.log('  ' + headerLine);
-    console.log('  ' + chalk.gray('-'.repeat(headerLine.length)));
+    console.log('  ' + pc.gray('-'.repeat(headerLine.length)));
 
     for (const row of rows) {
       const line = row

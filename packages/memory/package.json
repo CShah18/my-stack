@@ -1,7 +1,7 @@
 {
-  "name": "@mystack/memory",
+  "name": "@cshah-mystack/memory",
   "version": "0.1.1",
-  "description": "Context persistence and state storage layer for MyStack",
+  "description": "Context persistence and FileStore memory module for MyStack",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -17,7 +17,7 @@
     "ai",
     "memory",
     "persistence",
-    "context"
+    "filestore"
   ],
   "publishConfig": {
     "access": "public"
@@ -43,7 +43,7 @@
     "clean": "node -e \"require('fs').rmSync('dist', { recursive: true, force: true })\""
   },
   "dependencies": {
-    "@mystack/core": "workspace:*"
+    "@cshah-mystack/core": "workspace:*"
   },
   "devDependencies": {
     "tsup": "^8.3.6",

@@ -1,5 +1,5 @@
 import { logger } from '../utils/logger.js';
-import { MyStack } from '@mystack/sdk';
+import { MyStack } from '@cshah-mystack/sdk';
 
 export async function infoCommand(): Promise<void> {
   logger.banner('MyStack Workspace Overview', 'Current project state & configuration');
