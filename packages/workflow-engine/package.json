@@ -1,6 +1,6 @@
 {
   "name": "@mystack/workflow-engine",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Workflow execution state machine and failure recovery engine for MyStack",
   "license": "MIT",
   "repository": {

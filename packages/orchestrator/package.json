@@ -1,6 +1,6 @@
 {
   "name": "@mystack/orchestrator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Agent orchestrator and event middleware pipeline for MyStack",
   "license": "MIT",
   "repository": {
