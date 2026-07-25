@@ -1,5 +1,6 @@
 import { ToolReference, HandoffRule } from './common.js';
 import { PromptTemplate } from './prompt.js';
+import { PermissionScope } from './security.js';
 
 export interface AgentDefinition {
   id: string;
@@ -10,6 +11,7 @@ export interface AgentDefinition {
   capabilities: string[];
   tools: ToolReference[];
   prompt: PromptTemplate;
+  permissions?: PermissionScope[];
   inputSchemaName?: string;
   outputSchemaName?: string;
   dependencies: string[];

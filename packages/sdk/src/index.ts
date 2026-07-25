@@ -14,6 +14,12 @@ import {
   PluginLoader,
   PluginResolver,
   ResolvedPlugin,
+  TemplateDefinition,
+  TemplateLoader,
+  TemplateEngine,
+  SecretsProvider,
+  EnvSecretsProvider,
+  SecurityAuditEntry,
 } from '@mystack/core';
 import { AgentOrchestrator, OrchestratorOptions } from '@mystack/orchestrator';
 import { WorkflowEngine } from '@mystack/workflow-engine';
@@ -31,6 +37,7 @@ export interface MyStackInitOptions {
   configPath?: string;
   orchestratorOptions?: OrchestratorOptions;
   memoryStore?: MemoryStore;
+  secretsProvider?: SecretsProvider;
 }
 
 export class MyStack {
@@ -40,7 +47,10 @@ export class MyStack {
   private workflowEngine: WorkflowEngine;
   private memoryStore: MemoryStore;
   private promptEngine: PromptEngine;
+  private secretsProvider: SecretsProvider;
+  private templateEngine: TemplateEngine;
   private resolvedPlugins: ResolvedPlugin[] = [];
+  private loadedTemplatesCache: TemplateDefinition[] = [];
 
   private agentLoader = new AgentLoader();
   private skillLoader = new SkillLoader();
@@ -48,6 +58,7 @@ export class MyStack {
   private ruleLoader = new RuleLoader();
   private pluginLoader = new PluginLoader();
   private pluginResolver = new PluginResolver();
+  private templateLoader = new TemplateLoader();
 
   private constructor(
     rootDir: string,
@@ -55,13 +66,16 @@ export class MyStack {
     orchestrator: AgentOrchestrator,
     workflowEngine: WorkflowEngine,
     memoryStore: MemoryStore,
+    secretsProvider?: SecretsProvider,
   ) {
     this.rootDir = rootDir;
     this.config = config;
     this.orchestrator = orchestrator;
     this.workflowEngine = workflowEngine;
     this.memoryStore = memoryStore;
+    this.secretsProvider = secretsProvider ?? new EnvSecretsProvider();
     this.promptEngine = new PromptEngine();
+    this.templateEngine = new TemplateEngine();
   }
 
   public static async init(options: MyStackInitOptions): Promise<MyStack> {
@@ -98,9 +112,17 @@ export class MyStack {
     const orchestrator = new AgentOrchestrator(options.orchestratorOptions);
     const workflowEngine = new WorkflowEngine(orchestrator);
 
-    const instance = new MyStack(rootDir, config, orchestrator, workflowEngine, memoryStore);
+    const instance = new MyStack(
+      rootDir,
+      config,
+      orchestrator,
+      workflowEngine,
+      memoryStore,
+      options.secretsProvider,
+    );
     await instance.loadPlugins();
     await instance.loadAllAssets();
+    await instance.loadTemplates();
     return instance;
   }
 
@@ -262,7 +284,43 @@ export class MyStack {
     return this.memoryStore;
   }
 
+  public async loadTemplates(): Promise<TemplateDefinition[]> {
+    const templatePaths = [
+      ...this.config.templates.map((rel) => join(this.rootDir, rel)),
+      ...this.resolvedPlugins.flatMap((p) => p.assetDirectories.templates),
+    ];
+
+    const templates: TemplateDefinition[] = [];
+    for (const fullPath of templatePaths) {
+      try {
+        const loaded = await this.templateLoader.loadAll(fullPath);
+        templates.push(...loaded);
+      } catch {
+        // Path might not exist
+      }
+    }
+    this.loadedTemplatesCache = templates;
+    return templates;
+  }
+
+  public listTemplates(): TemplateDefinition[] {
+    return this.loadedTemplatesCache;
+  }
+
+  public getTemplateEngine(): TemplateEngine {
+    return this.templateEngine;
+  }
+
   public getPromptEngine(): PromptEngine {
     return this.promptEngine;
+  }
+
+  public getSecretsProvider(): SecretsProvider {
+    return this.secretsProvider;
+  }
+
+  public getSecurityAudit(context: ExecutionContext): SecurityAuditEntry[] {
+    const vars = context.variables as Record<string, unknown>;
+    return (vars['_securityAudit'] as SecurityAuditEntry[]) ?? [];
   }
 }

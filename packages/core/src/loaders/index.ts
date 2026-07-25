@@ -7,3 +7,4 @@ export * from './rule-loader.js';
 export * from './config-loader.js';
 export * from './plugin-loader.js';
 export * from './plugin-resolver.js';
+export * from './template-loader.js';

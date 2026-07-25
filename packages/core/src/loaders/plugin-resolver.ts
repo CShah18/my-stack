@@ -9,6 +9,7 @@ export interface ResolvedPlugin {
     skills: string[];
     workflows: string[];
     rules: string[];
+    templates: string[];
   };
 }
 
@@ -25,6 +26,7 @@ export class PluginResolver {
         skills: resolveRel(plugin.provides.skills),
         workflows: resolveRel(plugin.provides.workflows),
         rules: resolveRel(plugin.provides.rules),
+        templates: resolveRel(plugin.provides.templates),
       },
     };
   }

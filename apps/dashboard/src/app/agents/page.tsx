@@ -3,9 +3,11 @@
 import { useState, useEffect } from 'react';
 import { AgentDefinition } from '@mystack/core';
 import { AgentCard } from '@/components/AgentCard';
+import { AgentGraphViz } from '@/components/AgentGraphViz';
 import { Badge } from '@/components/Badge';
 
 export default function AgentsPage() {
+  const [viewMode, setViewMode] = useState<'grid' | 'graph'>('grid');
   const [agents, setAgents] = useState<AgentDefinition[]>([]);
   const [selectedAgent, setSelectedAgent] = useState<AgentDefinition | null>(null);
   const [search, setSearch] = useState('');
@@ -41,25 +43,73 @@ export default function AgentsPage() {
             Explore autonomous specialized agents registered in your workspace
           </p>
         </div>
-        <input
-          type="text"
-          placeholder="Search agents..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          style={{
-            padding: '10px 16px',
-            background: 'var(--bg-glass)',
-            border: '1px solid var(--border-glass)',
-            borderRadius: 'var(--radius-md)',
-            color: 'var(--text-primary)',
-            outline: 'none',
-            minWidth: '260px',
-          }}
-        />
+
+        <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+          <div
+            style={{
+              display: 'flex',
+              background: 'var(--bg-secondary)',
+              padding: '4px',
+              borderRadius: 'var(--radius-md)',
+              border: '1px solid var(--border-glass)',
+            }}
+          >
+            <button
+              onClick={() => setViewMode('grid')}
+              style={{
+                padding: '8px 16px',
+                borderRadius: 'var(--radius-sm)',
+                border: 'none',
+                background: viewMode === 'grid' ? 'var(--accent-primary)' : 'transparent',
+                color: viewMode === 'grid' ? '#fff' : 'var(--text-secondary)',
+                fontWeight: 600,
+                cursor: 'pointer',
+              }}
+            >
+              Grid View
+            </button>
+            <button
+              onClick={() => setViewMode('graph')}
+              style={{
+                padding: '8px 16px',
+                borderRadius: 'var(--radius-sm)',
+                border: 'none',
+                background: viewMode === 'graph' ? 'var(--accent-primary)' : 'transparent',
+                color: viewMode === 'graph' ? '#fff' : 'var(--text-secondary)',
+                fontWeight: 600,
+                cursor: 'pointer',
+              }}
+            >
+              Network Topology
+            </button>
+          </div>
+
+          <input
+            type="text"
+            placeholder="Search agents..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            style={{
+              padding: '10px 16px',
+              background: 'var(--bg-glass)',
+              border: '1px solid var(--border-glass)',
+              borderRadius: 'var(--radius-md)',
+              color: 'var(--text-primary)',
+              outline: 'none',
+              minWidth: '220px',
+            }}
+          />
+        </div>
       </div>
 
       {loading ? (
         <p style={{ color: 'var(--text-muted)' }}>Loading agent definitions...</p>
+      ) : viewMode === 'graph' ? (
+        <AgentGraphViz
+          agents={filteredAgents}
+          selectedAgentId={selectedAgent?.id}
+          onSelectAgent={(agent) => setSelectedAgent(agent)}
+        />
       ) : (
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 380px', gap: '24px' }}>
           <div
@@ -92,6 +142,19 @@ export default function AgentsPage() {
               </p>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <div>
+                  <h4 style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '6px' }}>
+                    Permission Scopes
+                  </h4>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                    {(selectedAgent.permissions ?? ['read:code']).map((perm) => (
+                      <Badge key={perm} variant="secondary">
+                        {perm}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+
                 <div>
                   <h4 style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '6px' }}>
                     Responsibilities

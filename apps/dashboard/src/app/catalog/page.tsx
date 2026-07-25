@@ -1,22 +1,25 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { SkillDefinition, RuleDefinition } from '@mystack/core';
+import { SkillDefinition, RuleDefinition, TemplateDefinition } from '@mystack/core';
 import { Badge } from '@/components/Badge';
 
 export default function CatalogPage() {
-  const [tab, setTab] = useState<'skills' | 'rules'>('skills');
+  const [tab, setTab] = useState<'skills' | 'rules' | 'templates'>('skills');
   const [skills, setSkills] = useState<SkillDefinition[]>([]);
   const [rules, setRules] = useState<RuleDefinition[]>([]);
+  const [templates, setTemplates] = useState<TemplateDefinition[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     Promise.all([
       fetch('/api/skills').then((res) => res.json()),
       fetch('/api/rules').then((res) => res.json()),
-    ]).then(([skillData, ruleData]) => {
+      fetch('/api/templates').then((res) => res.json()),
+    ]).then(([skillData, ruleData, templateData]) => {
       setSkills(skillData.skills ?? []);
       setRules(ruleData.rules ?? []);
+      setTemplates(templateData.templates ?? []);
       setLoading(false);
     });
   }, []);
@@ -26,10 +29,10 @@ export default function CatalogPage() {
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div>
           <h1 className="gradient-text" style={{ fontSize: '2.25rem', fontWeight: 800 }}>
-            Skills & Rules Catalog
+            Skills, Rules & Templates Catalog
           </h1>
           <p style={{ color: 'var(--text-secondary)', marginTop: '4px' }}>
-            Reusable architectural practices, tool capabilities, and quality constraints
+            Reusable architectural practices, quality constraints, and project scaffolds
           </p>
         </div>
 
@@ -72,6 +75,21 @@ export default function CatalogPage() {
           >
             Rules ({rules.length})
           </button>
+          <button
+            onClick={() => setTab('templates')}
+            style={{
+              padding: '8px 20px',
+              borderRadius: 'var(--radius-sm)',
+              border: 'none',
+              background: tab === 'templates' ? 'var(--accent-primary)' : 'transparent',
+              color: tab === 'templates' ? '#fff' : 'var(--text-secondary)',
+              fontWeight: 600,
+              cursor: 'pointer',
+              transition: 'all var(--transition-fast)',
+            }}
+          >
+            Templates ({templates.length})
+          </button>
         </div>
       </div>
 
@@ -104,7 +122,7 @@ export default function CatalogPage() {
             </div>
           ))}
         </div>
-      ) : (
+      ) : tab === 'rules' ? (
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: '20px' }}>
           {rules.map((rule) => (
             <div key={rule.id} className="glass-panel" style={{ padding: '20px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -127,6 +145,28 @@ export default function CatalogPage() {
                   </pre>
                 </div>
               )}
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: '20px' }}>
+          {templates.map((template) => (
+            <div key={template.id} className="glass-panel" style={{ padding: '20px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <h3 style={{ fontSize: '1.1rem', fontWeight: 700 }}>{template.name}</h3>
+                <Badge variant="primary">{template.category}</Badge>
+              </div>
+              <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>{template.description}</p>
+              <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+                Files: <span style={{ color: 'var(--text-primary)' }}>{template.files.length}</span> | Variables: <span style={{ color: 'var(--accent-secondary)' }}>{template.variables.length}</span>
+              </div>
+              <div style={{ marginTop: '8px', display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
+                {template.variables.map((v) => (
+                  <Badge key={v.name} variant="neutral">
+                    {v.name} {v.required ? '*' : ''}
+                  </Badge>
+                ))}
+              </div>
             </div>
           ))}
         </div>

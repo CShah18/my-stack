@@ -7,6 +7,8 @@ import { listCommand } from './commands/list.js';
 import { newCommand } from './commands/new.js';
 import { infoCommand } from './commands/info.js';
 import { pluginListCommand, pluginInfoCommand } from './commands/plugin.js';
+import { authSetKeyCommand, authListKeysCommand, authCheckCommand } from './commands/auth.js';
+import { templateListCommand, templateInfoCommand } from './commands/template.js';
 
 const program = new Command();
 
@@ -44,7 +46,7 @@ program
 
 program
   .command('new <type> <name>')
-  .description('Scaffold a new asset YAML (agent, skill, workflow, rule)')
+  .description('Scaffold a new asset or project from template (agent, skill, workflow, rule, nextjs-app, agent-plugin, express-api)')
   .action((type, name) => newCommand(type, name));
 
 program
@@ -65,6 +67,39 @@ pluginCmd
   .command('info <plugin-id>')
   .description('Display detailed breakdown of a specific plugin')
   .action((pluginId) => pluginInfoCommand(pluginId));
+
+const authCmd = program
+  .command('auth')
+  .description('Manage API keys, secrets, and auth health');
+
+authCmd
+  .command('set-key <key> <value>')
+  .description('Set a runtime secret key')
+  .action((key, value) => authSetKeyCommand(key, value));
+
+authCmd
+  .command('list-keys')
+  .description('List configured secrets and API keys (masked)')
+  .action(() => authListKeysCommand());
+
+authCmd
+  .command('check')
+  .description('Perform security and auth environment check')
+  .action(() => authCheckCommand());
+
+const templateCmd = program
+  .command('template')
+  .description('Browse and inspect available project templates');
+
+templateCmd
+  .command('list')
+  .description('List all available project templates')
+  .action(() => templateListCommand());
+
+templateCmd
+  .command('info <template-id>')
+  .description('Display detailed template information and variables')
+  .action((templateId) => templateInfoCommand(templateId));
 
 program.parseAsync(process.argv).catch((err) => {
   console.error('Fatal CLI error:', err);

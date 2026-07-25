@@ -31,6 +31,16 @@ export const PromptTemplateSchema = z.object({
   temperature: z.number().optional(),
 });
 
+export const PermissionScopeSchema = z.enum([
+  'read:code',
+  'write:code',
+  'exec:command',
+  'network:fetch',
+  'secrets:read',
+  'fs:read',
+  'fs:write',
+]);
+
 export const AgentDefinitionSchema = z.object({
   id: z.string(),
   name: z.string(),
@@ -40,6 +50,7 @@ export const AgentDefinitionSchema = z.object({
   capabilities: z.array(z.string()),
   tools: z.array(ToolReferenceSchema),
   prompt: PromptTemplateSchema,
+  permissions: z.array(PermissionScopeSchema).optional(),
   inputSchemaName: z.string().optional(),
   outputSchemaName: z.string().optional(),
   dependencies: z.array(z.string()),
@@ -163,6 +174,44 @@ export const RuleDefinitionSchema = z.object({
   enforcement: z.enum(['always', 'suggest', 'project-specific']),
   instruction: z.string(),
   examples: z.array(RuleExampleSchema),
+  metadata: z.record(z.unknown()).optional(),
+});
+
+export const TemplateCategorySchema = z.enum([
+  'project',
+  'feature',
+  'component',
+  'page',
+  'api',
+  'test',
+]);
+
+export const TemplateFileSchema = z.object({
+  path: z.string(),
+  content: z.string(),
+  isExecutable: z.boolean().optional(),
+});
+
+export const TemplateVariableSchema = z.object({
+  name: z.string(),
+  description: z.string(),
+  defaultValue: z.string().optional(),
+  required: z.boolean().optional(),
+});
+
+export const TemplateHooksSchema = z.object({
+  postGenerate: z.array(z.string()).optional(),
+});
+
+export const TemplateDefinitionSchema = z.object({
+  id: z.string(),
+  name: z.string(),
+  description: z.string(),
+  version: z.string(),
+  category: TemplateCategorySchema,
+  files: z.array(TemplateFileSchema),
+  variables: z.array(TemplateVariableSchema),
+  hooks: TemplateHooksSchema.optional(),
   metadata: z.record(z.unknown()).optional(),
 });
 

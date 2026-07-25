@@ -8,3 +8,5 @@ export * from './commands/list.js';
 export * from './commands/new.js';
 export * from './commands/info.js';
 export * from './commands/plugin.js';
+export * from './commands/auth.js';
+export * from './commands/template.js';

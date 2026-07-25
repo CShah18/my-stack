@@ -1,0 +1,103 @@
+id: agent-plugin
+name: Agent Plugin
+description: Scaffold for creating a custom MyStack plugin with agents, skills, and workflows
+version: 1.0.0
+category: project
+variables:
+  - name: pluginName
+    description: Name of the plugin (e.g. my-custom-plugin)
+    required: true
+  - name: author
+    description: Author or team name
+    defaultValue: MyStack Community
+  - name: description
+    description: Plugin description
+    defaultValue: A custom MyStack plugin
+files:
+  - path: "{{pluginName}}/plugin.yaml"
+    content: |
+      id: {{pluginName}}
+      name: {{pluginName}}
+      description: {{description}}
+      version: 1.0.0
+      author: {{author}}
+      provides:
+        agents:
+          - agents/
+        skills:
+          - skills/
+        workflows:
+          - workflows/
+  - path: "{{pluginName}}/agents/custom-agent.agent.yaml"
+    content: |
+      id: custom-agent
+      name: Custom Agent
+      description: A custom agent provided by {{pluginName}}
+      version: 1.0.0
+      responsibilities:
+        - Execute specialized tasks
+      capabilities:
+        - Domain expertise
+      tools: []
+      prompt:
+        id: prompt-custom-agent
+        system: You are a custom agent from {{pluginName}}.
+        template: |
+          Task: {{input}}
+        variables:
+          - name: input
+            description: The task input
+      dependencies: []
+      qualityChecklist:
+        - Output is verified
+      handoffRules: []
+  - path: "{{pluginName}}/skills/custom-skill.skill.yaml"
+    content: |
+      id: custom-skill
+      name: Custom Skill
+      description: A skill provided by {{pluginName}}
+      version: 1.0.0
+      category: tool
+      tags:
+        - custom
+      instructions: |
+        Follow best practices.
+      examples:
+        - title: Basic Usage
+          description: How to use this skill
+          code: |
+            // Example usage
+      references: []
+  - path: "{{pluginName}}/workflows/custom-workflow.workflow.yaml"
+    content: |
+      id: custom-workflow
+      name: Custom Workflow
+      description: A workflow provided by {{pluginName}}
+      version: 1.0.0
+      trigger: command
+      variables:
+        - name: target
+          description: Target input
+          required: false
+          defaultValue: "."
+      steps:
+        - id: step-1
+          agentId: custom-agent
+          name: Execute Custom Task
+          description: Runs the custom agent
+          input:
+            source: variables
+          onFailure: halt
+  - path: "{{pluginName}}/README.md"
+    content: |
+      # {{pluginName}}
+
+      {{description}}
+
+      ## Installation
+
+      Copy this plugin directory to your MyStack project's `plugins/` folder.
+
+      ## Author
+
+      {{author}}

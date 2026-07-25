@@ -3,12 +3,14 @@ import { AgentHandler, Middleware } from './types.js';
 import { OrchestratorEventBus } from './event-bus.js';
 import { loggingMiddleware } from './middleware/logging.js';
 import { validationMiddleware } from './middleware/validation.js';
+import { securityMiddleware } from './middleware/security.js';
 
 export * from './types.js';
 export * from './event-bus.js';
 export * from './middleware/logging.js';
 export * from './middleware/validation.js';
 export * from './middleware/retry.js';
+export * from './middleware/security.js';
 
 export interface OrchestratorOptions {
   agents?: AgentDefinition[];
@@ -24,6 +26,7 @@ export class AgentOrchestrator {
 
   constructor(options?: OrchestratorOptions) {
     this.handler = options?.handler ?? this.defaultHandler;
+    this.use(securityMiddleware);
     this.use(validationMiddleware);
     this.use(loggingMiddleware);
 

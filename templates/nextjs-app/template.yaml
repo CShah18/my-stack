@@ -1,0 +1,99 @@
+id: nextjs-app
+name: Next.js Application
+description: Full-stack Next.js 15 application with App Router, TypeScript, and MyStack integration
+version: 1.0.0
+category: project
+variables:
+  - name: projectName
+    description: The name of the project
+    required: true
+  - name: author
+    description: Author or team name
+    defaultValue: MyStack Team
+  - name: description
+    description: Project description
+    defaultValue: A MyStack-powered Next.js application
+files:
+  - path: "{{projectName}}/package.json"
+    content: |
+      {
+        "name": "{{projectName}}",
+        "version": "0.1.0",
+        "private": true,
+        "description": "{{description}}",
+        "author": "{{author}}",
+        "scripts": {
+          "dev": "next dev",
+          "build": "next build",
+          "start": "next start"
+        },
+        "dependencies": {
+          "next": "^15.0.0",
+          "react": "^19.0.0",
+          "react-dom": "^19.0.0",
+          "@mystack/sdk": "latest"
+        },
+        "devDependencies": {
+          "typescript": "^5.7.0",
+          "@types/node": "^20.0.0",
+          "@types/react": "^19.0.0"
+        }
+      }
+  - path: "{{projectName}}/tsconfig.json"
+    content: |
+      {
+        "compilerOptions": {
+          "target": "ES2022",
+          "lib": ["dom", "dom.iterable", "esnext"],
+          "module": "esnext",
+          "moduleResolution": "bundler",
+          "strict": true,
+          "jsx": "preserve",
+          "plugins": [{ "name": "next" }],
+          "paths": { "@/*": ["./src/*"] }
+        },
+        "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+        "exclude": ["node_modules"]
+      }
+  - path: "{{projectName}}/src/app/page.tsx"
+    content: |
+      export default function HomePage() {
+        return (
+          <main>
+            <h1>Welcome to {{projectName}}</h1>
+            <p>{{description}}</p>
+            <p>Built by {{author}} with MyStack</p>
+          </main>
+        );
+      }
+  - path: "{{projectName}}/src/app/layout.tsx"
+    content: |
+      export const metadata = {
+        title: '{{projectName}}',
+        description: '{{description}}',
+      };
+
+      export default function RootLayout({ children }: { children: React.ReactNode }) {
+        return (
+          <html lang="en">
+            <body>{children}</body>
+          </html>
+        );
+      }
+  - path: "{{projectName}}/mystack.config.yaml"
+    content: |
+      name: {{projectName}}
+      version: 0.1.0
+      agents: [./agents]
+      skills: [./skills]
+      workflows: [./workflows]
+      rules: [./rules]
+      templates: [./templates]
+      plugins: [./plugins]
+      settings:
+        logLevel: info
+        outputDir: .mystack
+        cacheEnabled: true
+hooks:
+  postGenerate:
+    - "cd {{projectName}} && npm install"

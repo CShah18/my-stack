@@ -1,0 +1,709 @@
+{
+  "value": {
+    "executionId": "exec-1784968613220-helkq",
+    "workflowId": "fullstack-feature",
+    "startedAt": "2026-07-25T08:36:53.220Z",
+    "variables": {
+      "featureName": "E2E Test Feature Dashboard",
+      "_securityAudit": [
+        {
+          "timestamp": "2026-07-25T08:36:53.221Z",
+          "agentId": "fullstack-lead",
+          "action": "dispatch:fullstack-lead",
+          "allowed": true,
+          "reason": "Permissions verified: [read:code]"
+        },
+        {
+          "timestamp": "2026-07-25T08:36:53.222Z",
+          "agentId": "backend-engineer",
+          "action": "dispatch:backend-engineer",
+          "allowed": true,
+          "reason": "Permissions verified: [read:code]"
+        },
+        {
+          "timestamp": "2026-07-25T08:36:53.222Z",
+          "agentId": "frontend-engineer",
+          "action": "dispatch:frontend-engineer",
+          "allowed": true,
+          "reason": "Permissions verified: [read:code]"
+        },
+        {
+          "timestamp": "2026-07-25T08:36:53.222Z",
+          "agentId": "qa-engineer",
+          "action": "dispatch:qa-engineer",
+          "allowed": true,
+          "reason": "Permissions verified: [read:code]"
+        }
+      ]
+    },
+    "steps": [
+      {
+        "stepId": "step-1784968613221",
+        "agentId": "fullstack-lead",
+        "status": "completed",
+        "input": {
+          "featureName": "E2E Test Feature Dashboard",
+          "_securityAudit": [
+            {
+              "timestamp": "2026-07-25T08:36:53.221Z",
+              "agentId": "fullstack-lead",
+              "action": "dispatch:fullstack-lead",
+              "allowed": true,
+              "reason": "Permissions verified: [read:code]"
+            },
+            {
+              "timestamp": "2026-07-25T08:36:53.222Z",
+              "agentId": "backend-engineer",
+              "action": "dispatch:backend-engineer",
+              "allowed": true,
+              "reason": "Permissions verified: [read:code]"
+            },
+            {
+              "timestamp": "2026-07-25T08:36:53.222Z",
+              "agentId": "frontend-engineer",
+              "action": "dispatch:frontend-engineer",
+              "allowed": true,
+              "reason": "Permissions verified: [read:code]"
+            },
+            {
+              "timestamp": "2026-07-25T08:36:53.222Z",
+              "agentId": "qa-engineer",
+              "action": "dispatch:qa-engineer",
+              "allowed": true,
+              "reason": "Permissions verified: [read:code]"
+            }
+          ]
+        },
+        "output": {
+          "agentId": "fullstack-lead",
+          "agentName": "Fullstack Lead Engineer",
+          "message": "Executed agent 'Fullstack Lead Engineer' successfully.",
+          "input": {
+            "featureName": "E2E Test Feature Dashboard",
+            "_securityAudit": [
+              {
+                "timestamp": "2026-07-25T08:36:53.221Z",
+                "agentId": "fullstack-lead",
+                "action": "dispatch:fullstack-lead",
+                "allowed": true,
+                "reason": "Permissions verified: [read:code]"
+              },
+              {
+                "timestamp": "2026-07-25T08:36:53.222Z",
+                "agentId": "backend-engineer",
+                "action": "dispatch:backend-engineer",
+                "allowed": true,
+                "reason": "Permissions verified: [read:code]"
+              },
+              {
+                "timestamp": "2026-07-25T08:36:53.222Z",
+                "agentId": "frontend-engineer",
+                "action": "dispatch:frontend-engineer",
+                "allowed": true,
+                "reason": "Permissions verified: [read:code]"
+              },
+              {
+                "timestamp": "2026-07-25T08:36:53.222Z",
+                "agentId": "qa-engineer",
+                "action": "dispatch:qa-engineer",
+                "allowed": true,
+                "reason": "Permissions verified: [read:code]"
+              }
+            ]
+          },
+          "contextId": "exec-1784968613220-helkq"
+        },
+        "startedAt": "2026-07-25T08:36:53.221Z",
+        "completedAt": "2026-07-25T08:36:53.221Z",
+        "retryCount": 0
+      },
+      {
+        "stepId": "step-1784968613222",
+        "agentId": "backend-engineer",
+        "status": "completed",
+        "input": {
+          "agentId": "fullstack-lead",
+          "agentName": "Fullstack Lead Engineer",
+          "message": "Executed agent 'Fullstack Lead Engineer' successfully.",
+          "input": {
+            "featureName": "E2E Test Feature Dashboard",
+            "_securityAudit": [
+              {
+                "timestamp": "2026-07-25T08:36:53.221Z",
+                "agentId": "fullstack-lead",
+                "action": "dispatch:fullstack-lead",
+                "allowed": true,
+                "reason": "Permissions verified: [read:code]"
+              },
+              {
+                "timestamp": "2026-07-25T08:36:53.222Z",
+                "agentId": "backend-engineer",
+                "action": "dispatch:backend-engineer",
+                "allowed": true,
+                "reason": "Permissions verified: [read:code]"
+              },
+              {
+                "timestamp": "2026-07-25T08:36:53.222Z",
+                "agentId": "frontend-engineer",
+                "action": "dispatch:frontend-engineer",
+                "allowed": true,
+                "reason": "Permissions verified: [read:code]"
+              },
+              {
+                "timestamp": "2026-07-25T08:36:53.222Z",
+                "agentId": "qa-engineer",
+                "action": "dispatch:qa-engineer",
+                "allowed": true,
+                "reason": "Permissions verified: [read:code]"
+              }
+            ]
+          },
+          "contextId": "exec-1784968613220-helkq"
+        },
+        "output": {
+          "agentId": "backend-engineer",
+          "agentName": "Backend Engineer",
+          "message": "Executed agent 'Backend Engineer' successfully.",
+          "input": {
+            "agentId": "fullstack-lead",
+            "agentName": "Fullstack Lead Engineer",
+            "message": "Executed agent 'Fullstack Lead Engineer' successfully.",
+            "input": {
+              "featureName": "E2E Test Feature Dashboard",
+              "_securityAudit": [
+                {
+                  "timestamp": "2026-07-25T08:36:53.221Z",
+                  "agentId": "fullstack-lead",
+                  "action": "dispatch:fullstack-lead",
+                  "allowed": true,
+                  "reason": "Permissions verified: [read:code]"
+                },
+                {
+                  "timestamp": "2026-07-25T08:36:53.222Z",
+                  "agentId": "backend-engineer",
+                  "action": "dispatch:backend-engineer",
+                  "allowed": true,
+                  "reason": "Permissions verified: [read:code]"
+                },
+                {
+                  "timestamp": "2026-07-25T08:36:53.222Z",
+                  "agentId": "frontend-engineer",
+                  "action": "dispatch:frontend-engineer",
+                  "allowed": true,
+                  "reason": "Permissions verified: [read:code]"
+                },
+                {
+                  "timestamp": "2026-07-25T08:36:53.222Z",
+                  "agentId": "qa-engineer",
+                  "action": "dispatch:qa-engineer",
+                  "allowed": true,
+                  "reason": "Permissions verified: [read:code]"
+                }
+              ]
+            },
+            "contextId": "exec-1784968613220-helkq"
+          },
+          "contextId": "exec-1784968613220-helkq"
+        },
+        "startedAt": "2026-07-25T08:36:53.222Z",
+        "completedAt": "2026-07-25T08:36:53.222Z",
+        "retryCount": 0
+      },
+      {
+        "stepId": "step-1784968613222",
+        "agentId": "frontend-engineer",
+        "status": "completed",
+        "input": {
+          "agentId": "backend-engineer",
+          "agentName": "Backend Engineer",
+          "message": "Executed agent 'Backend Engineer' successfully.",
+          "input": {
+            "agentId": "fullstack-lead",
+            "agentName": "Fullstack Lead Engineer",
+            "message": "Executed agent 'Fullstack Lead Engineer' successfully.",
+            "input": {
+              "featureName": "E2E Test Feature Dashboard",
+              "_securityAudit": [
+                {
+                  "timestamp": "2026-07-25T08:36:53.221Z",
+                  "agentId": "fullstack-lead",
+                  "action": "dispatch:fullstack-lead",
+                  "allowed": true,
+                  "reason": "Permissions verified: [read:code]"
+                },
+                {
+                  "timestamp": "2026-07-25T08:36:53.222Z",
+                  "agentId": "backend-engineer",
+                  "action": "dispatch:backend-engineer",
+                  "allowed": true,
+                  "reason": "Permissions verified: [read:code]"
+                },
+                {
+                  "timestamp": "2026-07-25T08:36:53.222Z",
+                  "agentId": "frontend-engineer",
+                  "action": "dispatch:frontend-engineer",
+                  "allowed": true,
+                  "reason": "Permissions verified: [read:code]"
+                },
+                {
+                  "timestamp": "2026-07-25T08:36:53.222Z",
+                  "agentId": "qa-engineer",
+                  "action": "dispatch:qa-engineer",
+                  "allowed": true,
+                  "reason": "Permissions verified: [read:code]"
+                }
+              ]
+            },
+            "contextId": "exec-1784968613220-helkq"
+          },
+          "contextId": "exec-1784968613220-helkq"
+        },
+        "output": {
+          "agentId": "frontend-engineer",
+          "agentName": "Frontend Engineer",
+          "message": "Executed agent 'Frontend Engineer' successfully.",
+          "input": {
+            "agentId": "backend-engineer",
+            "agentName": "Backend Engineer",
+            "message": "Executed agent 'Backend Engineer' successfully.",
+            "input": {
+              "agentId": "fullstack-lead",
+              "agentName": "Fullstack Lead Engineer",
+              "message": "Executed agent 'Fullstack Lead Engineer' successfully.",
+              "input": {
+                "featureName": "E2E Test Feature Dashboard",
+                "_securityAudit": [
+                  {
+                    "timestamp": "2026-07-25T08:36:53.221Z",
+                    "agentId": "fullstack-lead",
+                    "action": "dispatch:fullstack-lead",
+                    "allowed": true,
+                    "reason": "Permissions verified: [read:code]"
+                  },
+                  {
+                    "timestamp": "2026-07-25T08:36:53.222Z",
+                    "agentId": "backend-engineer",
+                    "action": "dispatch:backend-engineer",
+                    "allowed": true,
+                    "reason": "Permissions verified: [read:code]"
+                  },
+                  {
+                    "timestamp": "2026-07-25T08:36:53.222Z",
+                    "agentId": "frontend-engineer",
+                    "action": "dispatch:frontend-engineer",
+                    "allowed": true,
+                    "reason": "Permissions verified: [read:code]"
+                  },
+                  {
+                    "timestamp": "2026-07-25T08:36:53.222Z",
+                    "agentId": "qa-engineer",
+                    "action": "dispatch:qa-engineer",
+                    "allowed": true,
+                    "reason": "Permissions verified: [read:code]"
+                  }
+                ]
+              },
+              "contextId": "exec-1784968613220-helkq"
+            },
+            "contextId": "exec-1784968613220-helkq"
+          },
+          "contextId": "exec-1784968613220-helkq"
+        },
+        "startedAt": "2026-07-25T08:36:53.222Z",
+        "completedAt": "2026-07-25T08:36:53.222Z",
+        "retryCount": 0
+      },
+      {
+        "stepId": "step-1784968613222",
+        "agentId": "qa-engineer",
+        "status": "completed",
+        "input": {
+          "agentId": "frontend-engineer",
+          "agentName": "Frontend Engineer",
+          "message": "Executed agent 'Frontend Engineer' successfully.",
+          "input": {
+            "agentId": "backend-engineer",
+            "agentName": "Backend Engineer",
+            "message": "Executed agent 'Backend Engineer' successfully.",
+            "input": {
+              "agentId": "fullstack-lead",
+              "agentName": "Fullstack Lead Engineer",
+              "message": "Executed agent 'Fullstack Lead Engineer' successfully.",
+              "input": {
+                "featureName": "E2E Test Feature Dashboard",
+                "_securityAudit": [
+                  {
+                    "timestamp": "2026-07-25T08:36:53.221Z",
+                    "agentId": "fullstack-lead",
+                    "action": "dispatch:fullstack-lead",
+                    "allowed": true,
+                    "reason": "Permissions verified: [read:code]"
+                  },
+                  {
+                    "timestamp": "2026-07-25T08:36:53.222Z",
+                    "agentId": "backend-engineer",
+                    "action": "dispatch:backend-engineer",
+                    "allowed": true,
+                    "reason": "Permissions verified: [read:code]"
+                  },
+                  {
+                    "timestamp": "2026-07-25T08:36:53.222Z",
+                    "agentId": "frontend-engineer",
+                    "action": "dispatch:frontend-engineer",
+                    "allowed": true,
+                    "reason": "Permissions verified: [read:code]"
+                  },
+                  {
+                    "timestamp": "2026-07-25T08:36:53.222Z",
+                    "agentId": "qa-engineer",
+                    "action": "dispatch:qa-engineer",
+                    "allowed": true,
+                    "reason": "Permissions verified: [read:code]"
+                  }
+                ]
+              },
+              "contextId": "exec-1784968613220-helkq"
+            },
+            "contextId": "exec-1784968613220-helkq"
+          },
+          "contextId": "exec-1784968613220-helkq"
+        },
+        "output": {
+          "agentId": "qa-engineer",
+          "agentName": "QA Engineer",
+          "message": "Executed agent 'QA Engineer' successfully.",
+          "input": {
+            "agentId": "frontend-engineer",
+            "agentName": "Frontend Engineer",
+            "message": "Executed agent 'Frontend Engineer' successfully.",
+            "input": {
+              "agentId": "backend-engineer",
+              "agentName": "Backend Engineer",
+              "message": "Executed agent 'Backend Engineer' successfully.",
+              "input": {
+                "agentId": "fullstack-lead",
+                "agentName": "Fullstack Lead Engineer",
+                "message": "Executed agent 'Fullstack Lead Engineer' successfully.",
+                "input": {
+                  "featureName": "E2E Test Feature Dashboard",
+                  "_securityAudit": [
+                    {
+                      "timestamp": "2026-07-25T08:36:53.221Z",
+                      "agentId": "fullstack-lead",
+                      "action": "dispatch:fullstack-lead",
+                      "allowed": true,
+                      "reason": "Permissions verified: [read:code]"
+                    },
+                    {
+                      "timestamp": "2026-07-25T08:36:53.222Z",
+                      "agentId": "backend-engineer",
+                      "action": "dispatch:backend-engineer",
+                      "allowed": true,
+                      "reason": "Permissions verified: [read:code]"
+                    },
+                    {
+                      "timestamp": "2026-07-25T08:36:53.222Z",
+                      "agentId": "frontend-engineer",
+                      "action": "dispatch:frontend-engineer",
+                      "allowed": true,
+                      "reason": "Permissions verified: [read:code]"
+                    },
+                    {
+                      "timestamp": "2026-07-25T08:36:53.222Z",
+                      "agentId": "qa-engineer",
+                      "action": "dispatch:qa-engineer",
+                      "allowed": true,
+                      "reason": "Permissions verified: [read:code]"
+                    }
+                  ]
+                },
+                "contextId": "exec-1784968613220-helkq"
+              },
+              "contextId": "exec-1784968613220-helkq"
+            },
+            "contextId": "exec-1784968613220-helkq"
+          },
+          "contextId": "exec-1784968613220-helkq"
+        },
+        "startedAt": "2026-07-25T08:36:53.222Z",
+        "completedAt": "2026-07-25T08:36:53.222Z",
+        "retryCount": 0
+      }
+    ],
+    "status": "completed",
+    "logs": [
+      {
+        "timestamp": "2026-07-25T08:36:53.220Z",
+        "level": "info",
+        "message": "[Engine] Starting execution for workflow 'Fullstack Feature Pipeline' (fullstack-feature)"
+      },
+      {
+        "timestamp": "2026-07-25T08:36:53.221Z",
+        "level": "warn",
+        "agentId": "fullstack-lead",
+        "message": "[Orchestrator] Agent 'fullstack-lead' depends on 'frontend-engineer' which has not been completed yet in this execution."
+      },
+      {
+        "timestamp": "2026-07-25T08:36:53.221Z",
+        "level": "warn",
+        "agentId": "fullstack-lead",
+        "message": "[Orchestrator] Agent 'fullstack-lead' depends on 'backend-engineer' which has not been completed yet in this execution."
+      },
+      {
+        "timestamp": "2026-07-25T08:36:53.221Z",
+        "level": "info",
+        "agentId": "fullstack-lead",
+        "message": "[Orchestrator] Starting execution of agent 'Fullstack Lead Engineer' (fullstack-lead)",
+        "data": {
+          "input": {
+            "featureName": "E2E Test Feature Dashboard",
+            "_securityAudit": [
+              {
+                "timestamp": "2026-07-25T08:36:53.221Z",
+                "agentId": "fullstack-lead",
+                "action": "dispatch:fullstack-lead",
+                "allowed": true,
+                "reason": "Permissions verified: [read:code]"
+              },
+              {
+                "timestamp": "2026-07-25T08:36:53.222Z",
+                "agentId": "backend-engineer",
+                "action": "dispatch:backend-engineer",
+                "allowed": true,
+                "reason": "Permissions verified: [read:code]"
+              },
+              {
+                "timestamp": "2026-07-25T08:36:53.222Z",
+                "agentId": "frontend-engineer",
+                "action": "dispatch:frontend-engineer",
+                "allowed": true,
+                "reason": "Permissions verified: [read:code]"
+              },
+              {
+                "timestamp": "2026-07-25T08:36:53.222Z",
+                "agentId": "qa-engineer",
+                "action": "dispatch:qa-engineer",
+                "allowed": true,
+                "reason": "Permissions verified: [read:code]"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "timestamp": "2026-07-25T08:36:53.221Z",
+        "level": "info",
+        "agentId": "fullstack-lead",
+        "message": "[Orchestrator] Completed execution of agent 'Fullstack Lead Engineer' in 0ms",
+        "data": {
+          "status": "completed"
+        }
+      },
+      {
+        "timestamp": "2026-07-25T08:36:53.222Z",
+        "level": "warn",
+        "agentId": "backend-engineer",
+        "message": "[Orchestrator] Agent 'backend-engineer' depends on 'solution-architect' which has not been completed yet in this execution."
+      },
+      {
+        "timestamp": "2026-07-25T08:36:53.222Z",
+        "level": "info",
+        "agentId": "backend-engineer",
+        "message": "[Orchestrator] Starting execution of agent 'Backend Engineer' (backend-engineer)",
+        "data": {
+          "input": {
+            "agentId": "fullstack-lead",
+            "agentName": "Fullstack Lead Engineer",
+            "message": "Executed agent 'Fullstack Lead Engineer' successfully.",
+            "input": {
+              "featureName": "E2E Test Feature Dashboard",
+              "_securityAudit": [
+                {
+                  "timestamp": "2026-07-25T08:36:53.221Z",
+                  "agentId": "fullstack-lead",
+                  "action": "dispatch:fullstack-lead",
+                  "allowed": true,
+                  "reason": "Permissions verified: [read:code]"
+                },
+                {
+                  "timestamp": "2026-07-25T08:36:53.222Z",
+                  "agentId": "backend-engineer",
+                  "action": "dispatch:backend-engineer",
+                  "allowed": true,
+                  "reason": "Permissions verified: [read:code]"
+                },
+                {
+                  "timestamp": "2026-07-25T08:36:53.222Z",
+                  "agentId": "frontend-engineer",
+                  "action": "dispatch:frontend-engineer",
+                  "allowed": true,
+                  "reason": "Permissions verified: [read:code]"
+                },
+                {
+                  "timestamp": "2026-07-25T08:36:53.222Z",
+                  "agentId": "qa-engineer",
+                  "action": "dispatch:qa-engineer",
+                  "allowed": true,
+                  "reason": "Permissions verified: [read:code]"
+                }
+              ]
+            },
+            "contextId": "exec-1784968613220-helkq"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-07-25T08:36:53.222Z",
+        "level": "info",
+        "agentId": "backend-engineer",
+        "message": "[Orchestrator] Completed execution of agent 'Backend Engineer' in 0ms",
+        "data": {
+          "status": "completed"
+        }
+      },
+      {
+        "timestamp": "2026-07-25T08:36:53.222Z",
+        "level": "warn",
+        "agentId": "frontend-engineer",
+        "message": "[Orchestrator] Agent 'frontend-engineer' depends on 'ui-designer' which has not been completed yet in this execution."
+      },
+      {
+        "timestamp": "2026-07-25T08:36:53.222Z",
+        "level": "warn",
+        "agentId": "frontend-engineer",
+        "message": "[Orchestrator] Agent 'frontend-engineer' depends on 'solution-architect' which has not been completed yet in this execution."
+      },
+      {
+        "timestamp": "2026-07-25T08:36:53.222Z",
+        "level": "info",
+        "agentId": "frontend-engineer",
+        "message": "[Orchestrator] Starting execution of agent 'Frontend Engineer' (frontend-engineer)",
+        "data": {
+          "input": {
+            "agentId": "backend-engineer",
+            "agentName": "Backend Engineer",
+            "message": "Executed agent 'Backend Engineer' successfully.",
+            "input": {
+              "agentId": "fullstack-lead",
+              "agentName": "Fullstack Lead Engineer",
+              "message": "Executed agent 'Fullstack Lead Engineer' successfully.",
+              "input": {
+                "featureName": "E2E Test Feature Dashboard",
+                "_securityAudit": [
+                  {
+                    "timestamp": "2026-07-25T08:36:53.221Z",
+                    "agentId": "fullstack-lead",
+                    "action": "dispatch:fullstack-lead",
+                    "allowed": true,
+                    "reason": "Permissions verified: [read:code]"
+                  },
+                  {
+                    "timestamp": "2026-07-25T08:36:53.222Z",
+                    "agentId": "backend-engineer",
+                    "action": "dispatch:backend-engineer",
+                    "allowed": true,
+                    "reason": "Permissions verified: [read:code]"
+                  },
+                  {
+                    "timestamp": "2026-07-25T08:36:53.222Z",
+                    "agentId": "frontend-engineer",
+                    "action": "dispatch:frontend-engineer",
+                    "allowed": true,
+                    "reason": "Permissions verified: [read:code]"
+                  },
+                  {
+                    "timestamp": "2026-07-25T08:36:53.222Z",
+                    "agentId": "qa-engineer",
+                    "action": "dispatch:qa-engineer",
+                    "allowed": true,
+                    "reason": "Permissions verified: [read:code]"
+                  }
+                ]
+              },
+              "contextId": "exec-1784968613220-helkq"
+            },
+            "contextId": "exec-1784968613220-helkq"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-07-25T08:36:53.222Z",
+        "level": "info",
+        "agentId": "frontend-engineer",
+        "message": "[Orchestrator] Completed execution of agent 'Frontend Engineer' in 0ms",
+        "data": {
+          "status": "completed"
+        }
+      },
+      {
+        "timestamp": "2026-07-25T08:36:53.222Z",
+        "level": "info",
+        "agentId": "qa-engineer",
+        "message": "[Orchestrator] Starting execution of agent 'QA Engineer' (qa-engineer)",
+        "data": {
+          "input": {
+            "agentId": "frontend-engineer",
+            "agentName": "Frontend Engineer",
+            "message": "Executed agent 'Frontend Engineer' successfully.",
+            "input": {
+              "agentId": "backend-engineer",
+              "agentName": "Backend Engineer",
+              "message": "Executed agent 'Backend Engineer' successfully.",
+              "input": {
+                "agentId": "fullstack-lead",
+                "agentName": "Fullstack Lead Engineer",
+                "message": "Executed agent 'Fullstack Lead Engineer' successfully.",
+                "input": {
+                  "featureName": "E2E Test Feature Dashboard",
+                  "_securityAudit": [
+                    {
+                      "timestamp": "2026-07-25T08:36:53.221Z",
+                      "agentId": "fullstack-lead",
+                      "action": "dispatch:fullstack-lead",
+                      "allowed": true,
+                      "reason": "Permissions verified: [read:code]"
+                    },
+                    {
+                      "timestamp": "2026-07-25T08:36:53.222Z",
+                      "agentId": "backend-engineer",
+                      "action": "dispatch:backend-engineer",
+                      "allowed": true,
+                      "reason": "Permissions verified: [read:code]"
+                    },
+                    {
+                      "timestamp": "2026-07-25T08:36:53.222Z",
+                      "agentId": "frontend-engineer",
+                      "action": "dispatch:frontend-engineer",
+                      "allowed": true,
+                      "reason": "Permissions verified: [read:code]"
+                    },
+                    {
+                      "timestamp": "2026-07-25T08:36:53.222Z",
+                      "agentId": "qa-engineer",
+                      "action": "dispatch:qa-engineer",
+                      "allowed": true,
+                      "reason": "Permissions verified: [read:code]"
+                    }
+                  ]
+                },
+                "contextId": "exec-1784968613220-helkq"
+              },
+              "contextId": "exec-1784968613220-helkq"
+            },
+            "contextId": "exec-1784968613220-helkq"
+          }
+        }
+      },
+      {
+        "timestamp": "2026-07-25T08:36:53.222Z",
+        "level": "info",
+        "agentId": "qa-engineer",
+        "message": "[Orchestrator] Completed execution of agent 'QA Engineer' in 0ms",
+        "data": {
+          "status": "completed"
+        }
+      }
+    ],
+    "completedAt": "2026-07-25T08:36:53.222Z"
+  }
+}

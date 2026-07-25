@@ -1,0 +1,93 @@
+id: express-api
+name: Express API
+description: TypeScript Express REST API boilerplate with Zod validation and MyStack integration
+version: 1.0.0
+category: project
+variables:
+  - name: projectName
+    description: The name of the API project
+    required: true
+  - name: author
+    description: Author or team name
+    defaultValue: MyStack Team
+  - name: port
+    description: Server port
+    defaultValue: "3000"
+files:
+  - path: "{{projectName}}/package.json"
+    content: |
+      {
+        "name": "{{projectName}}",
+        "version": "0.1.0",
+        "private": true,
+        "type": "module",
+        "author": "{{author}}",
+        "scripts": {
+          "dev": "tsx watch src/server.ts",
+          "build": "tsc",
+          "start": "node dist/server.js"
+        },
+        "dependencies": {
+          "express": "^5.0.0",
+          "zod": "^3.24.0",
+          "@mystack/sdk": "latest"
+        },
+        "devDependencies": {
+          "typescript": "^5.7.0",
+          "@types/node": "^20.0.0",
+          "@types/express": "^5.0.0",
+          "tsx": "^4.19.0"
+        }
+      }
+  - path: "{{projectName}}/tsconfig.json"
+    content: |
+      {
+        "compilerOptions": {
+          "target": "ES2022",
+          "module": "NodeNext",
+          "moduleResolution": "NodeNext",
+          "outDir": "dist",
+          "rootDir": "src",
+          "strict": true,
+          "esModuleInterop": true,
+          "declaration": true
+        },
+        "include": ["src/**/*"],
+        "exclude": ["node_modules", "dist"]
+      }
+  - path: "{{projectName}}/src/server.ts"
+    content: |
+      import express from 'express';
+
+      const app = express();
+      app.use(express.json());
+
+      app.get('/health', (_req, res) => {
+        res.json({ status: 'ok', service: '{{projectName}}' });
+      });
+
+      app.get('/api/hello', (_req, res) => {
+        res.json({ message: 'Hello from {{projectName}}!', author: '{{author}}' });
+      });
+
+      const PORT = Number(process.env.PORT ?? {{port}});
+      app.listen(PORT, () => {
+        console.log(`{{projectName}} running on http://localhost:${PORT}`);
+      });
+  - path: "{{projectName}}/mystack.config.yaml"
+    content: |
+      name: {{projectName}}
+      version: 0.1.0
+      agents: [./agents]
+      skills: [./skills]
+      workflows: [./workflows]
+      rules: [./rules]
+      templates: [./templates]
+      plugins: [./plugins]
+      settings:
+        logLevel: info
+        outputDir: .mystack
+        cacheEnabled: true
+hooks:
+  postGenerate:
+    - "cd {{projectName}} && npm install"
