@@ -4,10 +4,10 @@
   "commit": false,
   "fixed": [],
   "linked": [
-    ["@mystack/core", "@mystack/orchestrator", "@mystack/workflow-engine", "@mystack/memory", "@mystack/prompts", "@mystack/sdk", "@mystack/cli"]
+    ["@cshah-mystack/core", "@cshah-mystack/orchestrator", "@cshah-mystack/workflow-engine", "@cshah-mystack/memory", "@cshah-mystack/prompts", "@cshah-mystack/sdk", "@cshah-mystack/cli"]
   ],
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": ["@mystack/dashboard"]
+  "ignore": ["@cshah-mystack/dashboard"]
 }
