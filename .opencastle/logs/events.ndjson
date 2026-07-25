@@ -1,1 +1,0 @@
-{"type":"session","timestamp":"2026-07-25T09:02:00Z","agent":"Developer","model":"gemini-3.6-flash","task":"Fix GitHub Actions git HTTP 403 permission error by adding explicit write permissions to release.yml","outcome":"success","duration_min":1,"files_changed":1,"retries":0,"lessons_added":[],"discoveries":[]}
