@@ -10,7 +10,7 @@ MyStack uses **pnpm workspaces** and **Turborepo**.
 
 ### Prerequisites
 
-- Node.js `>= 20.0.0`
+- Node.js `>= 22.0.0`
 - pnpm `>= 9.0.0`
 
 ### Setup Steps
