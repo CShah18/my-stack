@@ -13,7 +13,7 @@ describe('EnvSecretsProvider', () => {
   });
 
   it('should retrieve secrets prefixed with MYSTACK_SECRET_', async () => {
-    process.env.MYSTACK_SECRET_DB_PASS = 'super_secret_123';
+    process.env['MYSTACK_SECRET_DB_PASS'] = 'super_secret_123';
     const provider = new EnvSecretsProvider();
 
     expect(await provider.has('db_pass')).toBe(true);
@@ -21,7 +21,7 @@ describe('EnvSecretsProvider', () => {
   });
 
   it('should fallback to standard env vars if prefix not present', async () => {
-    process.env.OPENAI_API_KEY = 'sk-test-key-999';
+    process.env['OPENAI_API_KEY'] = 'sk-test-key-999';
     const provider = new EnvSecretsProvider();
 
     expect(await provider.has('OPENAI_API_KEY')).toBe(true);
@@ -29,8 +29,8 @@ describe('EnvSecretsProvider', () => {
   });
 
   it('should list all custom secret keys', async () => {
-    process.env.MYSTACK_SECRET_KEY_A = 'valA';
-    process.env.MYSTACK_SECRET_KEY_B = 'valB';
+    process.env['MYSTACK_SECRET_KEY_A'] = 'valA';
+    process.env['MYSTACK_SECRET_KEY_B'] = 'valB';
     const provider = new EnvSecretsProvider();
 
     const keys = await provider.list();

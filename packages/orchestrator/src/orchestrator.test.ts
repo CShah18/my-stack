@@ -1,4 +1,4 @@
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect } from 'vitest';
 import { AgentOrchestrator } from './index.js';
 import { AgentDefinition, ExecutionContext } from '@mystack/core';
 
@@ -26,12 +26,11 @@ describe('AgentOrchestrator', () => {
   const mockContext: ExecutionContext = {
     executionId: 'exec-1',
     workflowId: 'wf-1',
-    currentStepId: 'step-1',
     status: 'running',
     startedAt: new Date().toISOString(),
     variables: {},
     logs: [],
-    steps: {},
+    steps: [],
   };
 
   it('should register and retrieve an agent', () => {
