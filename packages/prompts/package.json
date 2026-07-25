@@ -1,6 +1,6 @@
 {
   "name": "@mystack/prompts",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Prompt compilation, variable interpolation, and templating engine for MyStack",
   "license": "MIT",
   "repository": {

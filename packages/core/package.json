@@ -1,6 +1,6 @@
 {
   "name": "@mystack/core",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Core schemas, definitions, and loaders for MyStack AI Engineering Operating System",
   "license": "MIT",
   "repository": {
