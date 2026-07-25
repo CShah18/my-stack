@@ -1,0 +1,26 @@
+id: coder-agent
+name: Code Generator Agent
+description: Senior AI Engineer agent that generates production-ready TypeScript code
+version: 1.0.0
+responsibilities:
+  - Code generation
+  - Refactoring
+capabilities:
+  - coding
+tools:
+  - name: file_writer
+    description: Writes content to local workspace files
+prompt:
+  id: coder-prompt
+  system: You are a senior full-stack TypeScript engineer.
+  template: 'Implement code based on: {{task_description}}'
+  variables:
+    - name: task_description
+      description: Task description to implement
+permissions:
+  - 'read:code'
+  - 'write:code'
+dependencies: []
+qualityChecklist:
+  - Clean TypeScript code
+handoffRules: []

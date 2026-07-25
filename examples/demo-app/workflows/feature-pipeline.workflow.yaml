@@ -1,0 +1,19 @@
+id: feature-pipeline
+name: Feature Delivery Pipeline
+description: Automated multi-agent feature planning and coding workflow
+version: 1.0.0
+trigger: manual
+variables:
+  - name: task_description
+    description: Initial feature request
+    defaultValue: Build authentication REST endpoint in TypeScript
+steps:
+  - id: step-1-code
+    agentId: coder-agent
+    name: Code Generation Step
+    description: Generate TypeScript endpoint implementation
+    input:
+      source: static
+      value: Build authentication REST endpoint in TypeScript
+    onFailure: halt
+    timeout: 5000

@@ -1,0 +1,63 @@
+{
+  "value": {
+    "executionId": "exec-1784973964566-frmc5",
+    "workflowId": "feature-pipeline",
+    "startedAt": "2026-07-25T10:06:04.566Z",
+    "variables": {
+      "_securityAudit": [
+        {
+          "timestamp": "2026-07-25T10:06:04.567Z",
+          "agentId": "coder-agent",
+          "action": "dispatch:coder-agent",
+          "allowed": true,
+          "reason": "Permissions verified: [read:code, write:code]"
+        }
+      ]
+    },
+    "steps": [
+      {
+        "stepId": "step-1784973964567",
+        "agentId": "coder-agent",
+        "status": "completed",
+        "input": "Build authentication REST endpoint in TypeScript",
+        "output": {
+          "agentId": "coder-agent",
+          "agentName": "Code Generator Agent",
+          "message": "Executed agent 'Code Generator Agent' successfully.",
+          "input": "Build authentication REST endpoint in TypeScript",
+          "contextId": "exec-1784973964566-frmc5"
+        },
+        "startedAt": "2026-07-25T10:06:04.567Z",
+        "completedAt": "2026-07-25T10:06:04.567Z",
+        "retryCount": 0
+      }
+    ],
+    "status": "completed",
+    "logs": [
+      {
+        "timestamp": "2026-07-25T10:06:04.567Z",
+        "level": "info",
+        "message": "[Engine] Starting execution for workflow 'Feature Delivery Pipeline' (feature-pipeline)"
+      },
+      {
+        "timestamp": "2026-07-25T10:06:04.567Z",
+        "level": "info",
+        "agentId": "coder-agent",
+        "message": "[Orchestrator] Starting execution of agent 'Code Generator Agent' (coder-agent)",
+        "data": {
+          "input": "Build authentication REST endpoint in TypeScript"
+        }
+      },
+      {
+        "timestamp": "2026-07-25T10:06:04.567Z",
+        "level": "info",
+        "agentId": "coder-agent",
+        "message": "[Orchestrator] Completed execution of agent 'Code Generator Agent' in 0ms",
+        "data": {
+          "status": "completed"
+        }
+      }
+    ],
+    "completedAt": "2026-07-25T10:06:04.567Z"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "value": {
+    "executionId": "exec-1784973955891-0ecgj",
+    "workflowId": "feature-pipeline",
+    "startedAt": "2026-07-25T10:05:55.891Z",
+    "variables": {
+      "_securityAudit": [
+        {
+          "timestamp": "2026-07-25T10:05:55.892Z",
+          "agentId": "coder-agent",
+          "action": "dispatch:coder-agent",
+          "allowed": true,
+          "reason": "Permissions verified: [read:code, write:code]"
+        }
+      ]
+    },
+    "steps": [
+      {
+        "stepId": "step-1784973955892",
+        "agentId": "coder-agent",
+        "status": "completed",
+        "input": "Build authentication REST endpoint in TypeScript",
+        "output": {
+          "agentId": "coder-agent",
+          "agentName": "Code Generator Agent",
+          "message": "Executed agent 'Code Generator Agent' successfully.",
+          "input": "Build authentication REST endpoint in TypeScript",
+          "contextId": "exec-1784973955891-0ecgj"
+        },
+        "startedAt": "2026-07-25T10:05:55.892Z",
+        "completedAt": "2026-07-25T10:05:55.892Z",
+        "retryCount": 0
+      }
+    ],
+    "status": "failed",
+    "logs": [
+      {
+        "timestamp": "2026-07-25T10:05:55.891Z",
+        "level": "info",
+        "message": "[Engine] Starting execution for workflow 'Feature Delivery Pipeline' (feature-pipeline)"
+      },
+      {
+        "timestamp": "2026-07-25T10:05:55.892Z",
+        "level": "info",
+        "agentId": "coder-agent",
+        "message": "[Orchestrator] Starting execution of agent 'Code Generator Agent' (coder-agent)",
+        "data": {
+          "input": "Build authentication REST endpoint in TypeScript"
+        }
+      },
+      {
+        "timestamp": "2026-07-25T10:05:55.892Z",
+        "level": "info",
+        "agentId": "coder-agent",
+        "message": "[Orchestrator] Completed execution of agent 'Code Generator Agent' in 0ms",
+        "data": {
+          "status": "completed"
+        }
+      }
+    ],
+    "completedAt": "2026-07-25T10:05:55.892Z"
+  }
+}
