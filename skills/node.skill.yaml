@@ -1,0 +1,27 @@
+id: node
+name: Node.js
+description: Server-side Node.js environment best practices using ESM imports and async/await.
+version: 1.0.0
+category: platform
+tags:
+  - node
+  - backend
+  - esm
+instructions: |
+  Use ECMAScript Modules (ESM) with import/export statements.
+  Always handle async errors with try/catch or async handler wrappers.
+  Use node:fs/promises for non-blocking file operations.
+examples:
+  - title: Safe Async File Reading
+    description: Asynchronous file reading using Node.js fs/promises
+    code: |
+      import { readFile } from 'node:fs/promises';
+
+      async function readConfig(path: string): Promise<Record<string, unknown>> {
+        const content = await readFile(path, 'utf-8');
+        return JSON.parse(content);
+      }
+references:
+  - type: url
+    title: Node.js Documentation
+    uri: https://nodejs.org/docs

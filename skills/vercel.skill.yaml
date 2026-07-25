@@ -1,0 +1,31 @@
+id: vercel
+name: Vercel
+description: Deployment and hosting configuration for Next.js and frontend applications on Vercel.
+version: 1.0.0
+category: platform
+tags:
+  - vercel
+  - deployment
+  - nextjs
+instructions: |
+  Use vercel.json for custom routing, header, and redirect configurations.
+  Configure environment variables safely via Vercel Project Settings.
+  Use Remote Caching for Turborepo builds in Vercel CI pipelines.
+examples:
+  - title: vercel.json Config
+    description: Custom headers configuration in vercel.json
+    code: |
+      {
+        "headers": [
+          {
+            "source": "/(.*)",
+            "headers": [
+              { "key": "X-Content-Type-Options", "value": "nosniff" }
+            ]
+          }
+        ]
+      }
+references:
+  - type: url
+    title: Vercel Documentation
+    uri: https://vercel.com/docs

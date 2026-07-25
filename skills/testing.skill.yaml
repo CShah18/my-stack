@@ -1,0 +1,33 @@
+id: testing
+name: Testing Workflow
+description: Unit testing with Vitest and React Testing Library for behavioral testing.
+version: 1.0.0
+category: practice
+tags:
+  - testing
+  - vitest
+  - rtl
+instructions: |
+  Write behavioral tests using React Testing Library queries (getByRole, getByText).
+  Avoid testing internal component state or implementation details.
+  Maintain 95%+ unit test coverage for core business logic and utilities.
+examples:
+  - title: Component Behavioral Test
+    description: Testing button click behavior with Vitest
+    code: |
+      import { render, screen, fireEvent } from '@testing-library/react';
+      import { describe, it, expect, vi } from 'vitest';
+      import { Button } from './Button';
+
+      describe('Button', () => {
+        it('triggers onClick when clicked', () => {
+          const handleClick = vi.fn();
+          render(<Button label="Submit" onClick={handleClick} />);
+          fireEvent.click(screen.getByRole('button', { name: /submit/i }));
+          expect(handleClick).toHaveBeenCalledTimes(1);
+        });
+      });
+references:
+  - type: url
+    title: Vitest Documentation
+    uri: https://vitest.dev

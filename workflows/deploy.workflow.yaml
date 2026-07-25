@@ -1,0 +1,42 @@
+id: deploy
+name: Deployment Pipeline
+description: Runs pre-deployment quality checks, builds production artifacts, and deploys to target environment.
+version: 1.0.0
+trigger: command
+variables:
+  - name: environment
+    description: Target environment (staging, production)
+    required: true
+    defaultValue: "staging"
+steps:
+  - id: step-qa
+    agentId: qa-engineer
+    name: Pre-Deploy Test Gate
+    description: Verify all unit and E2E tests pass
+    input:
+      source: variables
+    onFailure: halt
+
+  - id: step-security
+    agentId: security-engineer
+    name: Pre-Deploy Security Audit
+    description: Ensure secrets scanning and security policies pass
+    input:
+      source: variables
+    onFailure: halt
+
+  - id: step-devops
+    agentId: devops-engineer
+    name: Build & Deploy Execution
+    description: Trigger build and push artifacts to deployment target
+    input:
+      source: variables
+    onFailure: halt
+
+  - id: step-release
+    agentId: release-manager
+    name: Post-Deploy Release Tagging
+    description: Tag release version and generate release changelog
+    input:
+      source: previous_step
+    onFailure: skip

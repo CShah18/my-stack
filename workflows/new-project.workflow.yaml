@@ -1,0 +1,100 @@
+id: new-project
+name: New Project Initialization
+description: Full end-to-end pipeline to scaffold, design, build, test, and release a new project from scratch.
+version: 1.0.0
+trigger: command
+variables:
+  - name: projectName
+    description: Name of the project to build
+    required: true
+  - name: projectGoal
+    description: High-level purpose and goals of the software
+    required: true
+steps:
+  - id: step-ceo
+    agentId: ceo
+    name: Vision & Scope Definition
+    description: Establish project vision and goals
+    input:
+      source: variables
+    onFailure: halt
+
+  - id: step-pm
+    agentId: product-manager
+    name: Requirements & PRD Creation
+    description: Translate project goal into PRD and user stories
+    input:
+      source: previous_step
+    onFailure: halt
+
+  - id: step-architect
+    agentId: solution-architect
+    name: Architecture & System Design
+    description: Create system design, ADRs, and tech stack choices
+    input:
+      source: previous_step
+    onFailure: halt
+
+  - id: step-database
+    agentId: database-engineer
+    name: Database Schema Design
+    description: Create SQL DDL tables, indexes, and migrations
+    input:
+      source: previous_step
+    onFailure: halt
+
+  - id: step-ui
+    agentId: ui-designer
+    name: Design System & UI Specification
+    description: Produce visual design tokens and layout specs
+    input:
+      source: previous_step
+    onFailure: halt
+
+  - id: step-frontend
+    agentId: frontend-engineer
+    name: Frontend Implementation
+    description: Build React components and pages
+    input:
+      source: previous_step
+    onFailure: halt
+
+  - id: step-backend
+    agentId: backend-engineer
+    name: Backend API Implementation
+    description: Build server API endpoints and services
+    input:
+      source: previous_step
+    onFailure: halt
+
+  - id: step-qa
+    agentId: qa-engineer
+    name: Quality Assurance & Testing
+    description: Run unit, integration, and E2E test suites
+    input:
+      source: previous_step
+    onFailure: halt
+
+  - id: step-security
+    agentId: security-engineer
+    name: Security Audit
+    description: Scan for vulnerabilities, auth checks, and secret exposure
+    input:
+      source: previous_step
+    onFailure: halt
+
+  - id: step-docs
+    agentId: documentation-engineer
+    name: Documentation Generation
+    description: Write README, architecture guides, and API docs
+    input:
+      source: previous_step
+    onFailure: halt
+
+  - id: step-release
+    agentId: release-manager
+    name: Release Coordination
+    description: Verify readiness, tag semver release, and generate changelog
+    input:
+      source: previous_step
+    onFailure: halt

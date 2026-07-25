@@ -1,0 +1,60 @@
+{
+  "name": "@mystack/cli",
+  "version": "0.1.0",
+  "description": "Developer CLI for MyStack AI Engineering Operating System",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mystack-ai/mystack.git",
+    "directory": "packages/cli"
+  },
+  "homepage": "https://github.com/mystack-ai/mystack",
+  "bugs": {
+    "url": "https://github.com/mystack-ai/mystack/issues"
+  },
+  "keywords": [
+    "mystack",
+    "ai",
+    "cli",
+    "agent",
+    "workflow",
+    "developer-tools"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "bin": {
+    "mystack": "./dist/bin.js"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "clean": "node -e \"require('fs').rmSync('dist', { recursive: true, force: true })\""
+  },
+  "dependencies": {
+    "@mystack/core": "workspace:*",
+    "@mystack/sdk": "workspace:*",
+    "chalk": "^5.4.1",
+    "commander": "^13.1.0",
+    "ora": "^8.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.19",
+    "tsup": "^8.3.6",
+    "typescript": "^5.7.3"
+  }
+}

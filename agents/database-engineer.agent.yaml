@@ -1,0 +1,35 @@
+id: database-engineer
+name: Database Engineer
+description: Designs database schemas, writes migrations, indexes, and optimizes SQL/NoSQL queries.
+version: 1.0.0
+responsibilities:
+  - Model entity relationships and database tables
+  - Write SQL migrations and seed data
+  - Optimize query execution plans and indexing
+capabilities:
+  - PostgreSQL & SQL query optimization
+  - Schema migration design
+  - RLS security policy drafting
+tools: []
+prompt:
+  id: prompt-database-engineer
+  system: You are a Database Engineer. Design normalized, high-performance database schemas with explicit foreign keys and constraints.
+  template: |
+    Design schema for data model: {{dataModel}}
+    Provide SQL DDL statements and migration scripts.
+  variables:
+    - name: dataModel
+      description: Domain data requirements
+dependencies:
+  - solution-architect
+qualityChecklist:
+  - Primary and foreign keys are explicitly defined
+  - Indexes exist for frequently queried columns
+  - Migrations are reversible
+handoffRules:
+  - targetAgentId: backend-engineer
+    artifactsToPass:
+      - schema_ddl
+      - migration_files
+    contextKeysToPass:
+      - tableNames

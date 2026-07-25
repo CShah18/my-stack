@@ -1,0 +1,17 @@
+id: small-files
+name: Small Modular Files
+description: Keep individual source files small, modular, and single-purpose (target under 500 lines).
+severity: warning
+category: style
+enforcement: suggest
+instruction: |
+  Target source files <= 500 lines.
+  When a file exceeds 500 lines, refactor logically into sub-components or utility modules.
+examples:
+  - description: Splitting large component into subcomponents
+    good: |
+      // UserProfile/UserProfileHeader.tsx
+      // UserProfile/UserProfileDetails.tsx
+      // UserProfile/index.tsx
+    bad: |
+      // UserProfile.tsx (1200 lines monolithic file)

@@ -1,0 +1,16 @@
+id: api-validation
+name: Every API Validated
+description: Validate every incoming API request and outgoing payload with explicit Zod schemas.
+severity: error
+category: security
+enforcement: always
+instruction: |
+  Define a Zod validation schema for every API route payload, query parameter, and body.
+  Return 400 Bad Request with explicit validation error messages when validation fails.
+examples:
+  - description: Zod schema API validation
+    good: |
+      const RequestSchema = z.object({ id: z.string().uuid() });
+      const parsed = RequestSchema.parse(req.body);
+    bad: |
+      const id = req.body.id;

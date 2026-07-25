@@ -1,0 +1,31 @@
+id: supabase
+name: Supabase
+description: Supabase Postgres database, authentication, row-level security (RLS), and edge functions.
+version: 1.0.0
+category: platform
+tags:
+  - supabase
+  - database
+  - auth
+  - rls
+instructions: |
+  Always enable Row Level Security (RLS) on every Supabase table.
+  Generate TypeScript types using supabase gen types.
+  Keep database secrets server-side; pass anon key to client.
+examples:
+  - title: Querying Supabase with Types
+    description: Type-safe query using Supabase client
+    code: |
+      import { createClient } from '@supabase/supabase-js';
+
+      const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!);
+
+      async function getUsers() {
+        const { data, error } = await supabase.from('profiles').select('*');
+        if (error) throw error;
+        return data;
+      }
+references:
+  - type: url
+    title: Supabase Documentation
+    uri: https://supabase.com/docs

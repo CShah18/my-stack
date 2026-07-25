@@ -1,0 +1,31 @@
+id: seo
+name: SEO Best Practices
+description: Technical SEO rules, HTML head metadata, Open Graph tags, and JSON-LD structured data.
+version: 1.0.0
+category: practice
+tags:
+  - seo
+  - metadata
+  - open-graph
+instructions: |
+  Include unique title and meta description tags on every page.
+  Use exactly one <h1> heading per page with standard heading hierarchy.
+  Add JSON-LD structured data schemas for search engine indexation.
+examples:
+  - title: Next.js Metadata Export
+    description: Configured metadata object in Next.js App Router
+    code: |
+      import type { Metadata } from 'next';
+
+      export const metadata: Metadata = {
+        title: 'MyStack — AI Engineering Operating System',
+        description: 'An open-source framework for running AI software engineering teams.',
+        openGraph: {
+          title: 'MyStack — AI Engineering Operating System',
+          description: 'An open-source framework for running AI software engineering teams.',
+        },
+      };
+references:
+  - type: url
+    title: Google Search Central
+    uri: https://developers.google.com/search/docs

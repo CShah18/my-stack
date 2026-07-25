@@ -1,0 +1,20 @@
+id: accessibility-first
+name: Accessibility First Design
+description: Require WCAG 2.2 Level AA compliance, proper ARIA attributes, and keyboard navigation.
+severity: error
+category: accessibility
+enforcement: always
+instruction: |
+  Every interactive component must be accessible via keyboard navigation.
+  All image elements require non-empty alt text unless purely decorative (alt="").
+  Ensure semantic HTML tags (header, main, nav, section, article, footer) are used.
+examples:
+  - description: Accessible icon button with aria-label
+    good: |
+      <button aria-label="Close dialog" onClick={onClose}>
+        <CloseIcon aria-hidden="true" />
+      </button>
+    bad: |
+      <div onClick={onClose}>
+        <CloseIcon />
+      </div>

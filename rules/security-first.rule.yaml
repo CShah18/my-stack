@@ -1,0 +1,17 @@
+id: security-first
+name: Security First Architecture
+description: Prevent credential leaks, SQL injection, XSS, and insecure direct object references.
+severity: error
+category: security
+enforcement: always
+instruction: |
+  Never commit API keys, secrets, or tokens into source control.
+  Use environment variables via process.env with runtime validation.
+  Always sanitize data before rendering in the browser or passing to raw queries.
+examples:
+  - description: Accessing secrets via environment variables
+    good: |
+      const apiKey = process.env.API_KEY;
+      if (!apiKey) throw new Error('API_KEY environment variable is required');
+    bad: |
+      const apiKey = "sk_live_123456789abcdef";

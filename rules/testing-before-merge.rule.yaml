@@ -1,0 +1,15 @@
+id: testing-before-merge
+name: Testing Before Merge
+description: Require all automated tests to pass cleanly before merging or completing a feature.
+severity: error
+category: testing
+enforcement: always
+instruction: |
+  Never mark a task complete or merge code without running the test suite.
+  Ensure zero failing tests and zero skipped critical assertions.
+examples:
+  - description: Running test suite command before completion
+    good: |
+      pnpm test
+    bad: |
+      // Merging PR without running test command

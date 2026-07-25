@@ -1,0 +1,18 @@
+name: mystack
+version: 0.1.0
+agents:
+  - ./agents
+skills:
+  - ./skills
+workflows:
+  - ./workflows
+rules:
+  - ./rules
+templates:
+  - ./templates
+plugins:
+  - ./plugins
+settings:
+  logLevel: info
+  outputDir: .mystack
+  cacheEnabled: true

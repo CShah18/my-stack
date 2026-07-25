@@ -1,0 +1,52 @@
+id: build-feature
+name: Feature Development Pipeline
+description: Scaffolds, implements, and tests a single feature in an existing project.
+version: 1.0.0
+trigger: command
+variables:
+  - name: featureName
+    description: Name of the feature to build
+    required: true
+  - name: featureSpec
+    description: Detailed feature description
+    required: true
+steps:
+  - id: step-pm
+    agentId: product-manager
+    name: Feature Specification
+    description: Write user story and acceptance criteria
+    input:
+      source: variables
+    onFailure: halt
+
+  - id: step-architect
+    agentId: solution-architect
+    name: Feature Architecture Review
+    description: Determine component boundaries and API contracts
+    input:
+      source: previous_step
+    onFailure: halt
+
+  - id: step-frontend
+    agentId: frontend-engineer
+    name: Frontend Feature Code
+    description: Implement React UI components
+    input:
+      source: previous_step
+    onFailure: halt
+
+  - id: step-backend
+    agentId: backend-engineer
+    name: Backend Feature API
+    description: Implement API routes and business logic
+    input:
+      source: previous_step
+    onFailure: halt
+
+  - id: step-qa
+    agentId: qa-engineer
+    name: Verification & Testing
+    description: Verify acceptance criteria with unit/integration tests
+    input:
+      source: previous_step
+    onFailure: halt

@@ -1,0 +1,20 @@
+id: documentation-required
+name: Every Feature Documented
+description: Require documentation and TSDoc comments for every new public module, API, or feature.
+severity: warning
+category: documentation
+enforcement: always
+instruction: |
+  Add JSDoc/TSDoc comments explaining the purpose of exported functions, classes, and types.
+  Update the main README or package documentation when adding new features.
+examples:
+  - description: TSDoc function documentation
+    good: |
+      /**
+       * Calculates discount based on total order amount and tier.
+       * @param amount Total order amount in cents
+       * @param tier User subscription tier
+       */
+      export function calculateDiscount(amount: number, tier: string): number { ... }
+    bad: |
+      export function calculateDiscount(amount, tier) { ... }

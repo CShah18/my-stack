@@ -1,0 +1,27 @@
+id: postgres
+name: PostgreSQL
+description: PostgreSQL relational database design, indexing, foreign keys, and SQL queries.
+version: 1.0.0
+category: database
+tags:
+  - postgres
+  - sql
+  - ddl
+instructions: |
+  Always specify explicit data types, PRIMARY KEY, and FOREIGN KEY constraints.
+  Add indexes on foreign key columns and columns used in WHERE / JOIN conditions.
+  Use timestamptz for date/time columns to preserve timezone information.
+examples:
+  - title: DDL Table Creation
+    description: Creating a normalized table with constraints
+    code: |
+      CREATE TABLE users (
+        id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+        email VARCHAR(255) UNIQUE NOT NULL,
+        created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+      );
+      CREATE INDEX idx_users_email ON users(email);
+references:
+  - type: url
+    title: PostgreSQL Documentation
+    uri: https://www.postgresql.org/docs

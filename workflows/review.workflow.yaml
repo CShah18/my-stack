@@ -1,0 +1,34 @@
+id: review
+name: Comprehensive Code Review
+description: Audits code for testing, security vulnerabilities, and performance regressions.
+version: 1.0.0
+trigger: command
+variables:
+  - name: targetPath
+    description: Files or path to review
+    required: false
+    defaultValue: "."
+steps:
+  - id: step-qa
+    agentId: qa-engineer
+    name: Test Coverage Review
+    description: Verify test coverage and edge cases
+    input:
+      source: variables
+    onFailure: skip
+
+  - id: step-security
+    agentId: security-engineer
+    name: Security Vulnerability Scan
+    description: Audit for secret exposure and OWASP vulnerabilities
+    input:
+      source: variables
+    onFailure: skip
+
+  - id: step-performance
+    agentId: performance-engineer
+    name: Performance Audit
+    description: Check bundle size impact and execution efficiency
+    input:
+      source: variables
+    onFailure: skip

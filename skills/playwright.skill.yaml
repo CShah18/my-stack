@@ -1,0 +1,27 @@
+id: playwright
+name: Playwright E2E
+description: Writing end-to-end browser automation tests and Page Object Models in Playwright.
+version: 1.0.0
+category: tool
+tags:
+  - playwright
+  - e2e
+  - testing
+instructions: |
+  Use locator methods (getByRole, getByText, getByTestId) over fragile CSS selectors.
+  Implement Page Object Models (POM) for reusability across test cases.
+  Run tests in headless mode in CI and capture screenshots/recordings on failure.
+examples:
+  - title: Playwright E2E Spec
+    description: Testing home page navigation with Playwright
+    code: |
+      import { test, expect } from '@playwright/test';
+
+      test('has page title', async ({ page }) => {
+        await page.goto('/');
+        await expect(page).toHaveTitle(/MyStack/);
+      });
+references:
+  - type: url
+    title: Playwright Documentation
+    uri: https://playwright.dev

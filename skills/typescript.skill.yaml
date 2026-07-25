@@ -1,0 +1,30 @@
+id: typescript
+name: TypeScript
+description: Guidelines for writing strict, type-safe TypeScript code without any types.
+version: 1.0.0
+category: language
+tags:
+  - typescript
+  - types
+  - strict
+instructions: |
+  Never use 'any' or 'as any'. Use 'unknown' with type narrowing if type is genuinely dynamic.
+  Enable strict null checks and noUncheckedIndexedAccess in tsconfig.
+  Prefer interfaces for object schemas and type aliases for unions/primitives.
+examples:
+  - title: Type Guard Example
+    description: Safely narrowing unknown types
+    code: |
+      function isUser(data: unknown): data is { id: string; name: string } {
+        return (
+          typeof data === 'object' &&
+          data !== null &&
+          'id' in data &&
+          'name' in data &&
+          typeof (data as Record<string, unknown>).id === 'string'
+        );
+      }
+references:
+  - type: url
+    title: TypeScript Reference
+    uri: https://www.typescriptlang.org/docs

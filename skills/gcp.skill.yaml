@@ -1,0 +1,26 @@
+id: gcp
+name: Google Cloud Platform
+description: Deployment, IAM, Cloud Run, Cloud Storage, and BigQuery guidelines on GCP.
+version: 1.0.0
+category: platform
+tags:
+  - gcp
+  - cloud-run
+  - bigquery
+instructions: |
+  Use gcloud CLI with explicit project and region attributes.
+  Store secrets in GCP Secret Manager instead of hardcoding.
+  Deploy serverless containers to Cloud Run for automated scaling.
+examples:
+  - title: Deploy to Cloud Run
+    description: Deploying container service to GCP Cloud Run
+    code: |
+      gcloud run deploy my-app \
+        --image gcr.io/my-project/my-app:latest \
+        --region us-central1 \
+        --platform managed \
+        --allow-unauthenticated
+references:
+  - type: url
+    title: GCP Documentation
+    uri: https://cloud.google.com/docs

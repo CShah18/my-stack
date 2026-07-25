@@ -1,0 +1,12 @@
+id: mystack-plugin-fullstack
+name: Fullstack Web Engineering Plugin
+description: Bundles fullstack lead agent, Next.js skill, and end-to-end fullstack feature workflow.
+version: 1.0.0
+author: MyStack Team
+provides:
+  agents:
+    - ./agents
+  skills:
+    - ./skills
+  workflows:
+    - ./workflows

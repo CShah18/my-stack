@@ -1,0 +1,31 @@
+id: security
+name: Security Hardening
+description: Application security guidelines, input validation, CSP headers, and secret management.
+version: 1.0.0
+category: practice
+tags:
+  - security
+  - owasp
+  - csp
+instructions: |
+  Never expose sensitive tokens or credentials in source code or logs.
+  Validate all input parameters using Zod schemas before processing.
+  Apply strict Content Security Policy (CSP) headers to prevent XSS.
+examples:
+  - title: Zod Input Validation Middleware
+    description: Sanitizing and validating HTTP request body
+    code: |
+      import { z } from 'zod';
+
+      const BodySchema = z.object({
+        email: z.string().email(),
+        age: z.number().min(18),
+      });
+
+      export function validateBody(data: unknown) {
+        return BodySchema.parse(data);
+      }
+references:
+  - type: url
+    title: OWASP Top 10
+    uri: https://owasp.org/www-project-top-ten

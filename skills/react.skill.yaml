@@ -1,0 +1,38 @@
+id: react
+name: React
+description: Guidelines for building modern React components, custom hooks, and state management.
+version: 1.0.0
+category: framework
+tags:
+  - react
+  - frontend
+  - hooks
+  - ui
+instructions: |
+  Use functional components with hooks.
+  Always define strict TypeScript prop interfaces.
+  Co-locate component files with their corresponding styles and tests.
+  Avoid unnecessary state re-renders with useMemo/useCallback when performing heavy computations.
+examples:
+  - title: Functional Component with Interface
+    description: Standard React component with prop types
+    code: |
+      import React from 'react';
+
+      interface ButtonProps {
+        label: string;
+        onClick: () => void;
+        variant?: 'primary' | 'secondary';
+      }
+
+      export const Button: React.FC<ButtonProps> = ({ label, onClick, variant = 'primary' }) => {
+        return (
+          <button onClick={onClick} className={`btn btn-${variant}`}>
+            {label}
+          </button>
+        );
+      };
+references:
+  - type: url
+    title: React Documentation
+    uri: https://react.dev

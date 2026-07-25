@@ -1,0 +1,42 @@
+id: fullstack-feature
+name: Fullstack Feature Pipeline
+description: End-to-end pipeline orchestrating architecture, backend API, frontend UI, and QA validation.
+version: 1.0.0
+trigger: command
+variables:
+  - name: featureName
+    description: Name of feature to implement
+    required: true
+    defaultValue: "user-dashboard"
+steps:
+  - id: step-lead-plan
+    agentId: fullstack-lead
+    name: Fullstack Architecture Planning
+    description: Define feature specification and component boundaries
+    input:
+      source: variables
+    onFailure: halt
+
+  - id: step-backend
+    agentId: backend-engineer
+    name: API Endpoint Implementation
+    description: Build API route handlers and database queries
+    input:
+      source: previous_step
+    onFailure: halt
+
+  - id: step-frontend
+    agentId: frontend-engineer
+    name: UI Component Implementation
+    description: Build responsive React interface components
+    input:
+      source: previous_step
+    onFailure: halt
+
+  - id: step-qa
+    agentId: qa-engineer
+    name: End-to-End Verification
+    description: Verify feature functionality and integration tests
+    input:
+      source: previous_step
+    onFailure: skip

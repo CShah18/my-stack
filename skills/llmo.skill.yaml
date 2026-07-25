@@ -1,0 +1,24 @@
+id: llmo
+name: LLM Optimization
+description: Strategies for prompt compression, system prompt design, and context window management.
+version: 1.0.0
+category: ai
+tags:
+  - llm
+  - prompts
+  - RAG
+instructions: |
+  Keep system prompts concise, unambiguous, and focused on core constraints.
+  Use structured output formats (JSON/YAML) with explicit key names.
+  Truncate or summarize long context logs before sending to the model context.
+examples:
+  - title: Prompt Variable Substitution
+    description: Clear prompt template with key placeholders
+    code: |
+      You are an AI Coding Specialist.
+      Task: {{taskDescription}}
+      Output: Respond strictly in JSON matching schema {"status": "success", "result": string}.
+references:
+  - type: url
+    title: OpenAI Prompt Engineering Guide
+    uri: https://platform.openai.com/docs/guides/prompt-engineering

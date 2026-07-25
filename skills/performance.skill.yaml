@@ -1,0 +1,27 @@
+id: performance
+name: Performance Optimization
+description: Techniques for dynamic imports, bundle optimization, and web vitals tuning.
+version: 1.0.0
+category: practice
+tags:
+  - performance
+  - bundle
+  - caching
+instructions: |
+  Use dynamic imports (`next/dynamic` or `React.lazy`) for heavy, non-critical components.
+  Optimize images using modern formats (WebP/AVIF) and explicit dimensions.
+  Avoid large monolithic bundle imports by importing specific subpaths.
+examples:
+  - title: Dynamic Component Import
+    description: Lazy loading a heavy chart component
+    code: |
+      import dynamic from 'next/dynamic';
+
+      const DynamicChart = dynamic(() => import('./HeavyChart'), {
+        loading: () => <p>Loading chart...</p>,
+        ssr: false,
+      });
+references:
+  - type: url
+    title: Web Vitals Documentation
+    uri: https://web.dev/vitals

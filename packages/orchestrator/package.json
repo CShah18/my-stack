@@ -1,0 +1,51 @@
+{
+  "name": "@mystack/orchestrator",
+  "version": "0.1.0",
+  "description": "Agent orchestrator and event middleware pipeline for MyStack",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mystack-ai/mystack.git",
+    "directory": "packages/orchestrator"
+  },
+  "homepage": "https://github.com/mystack-ai/mystack",
+  "bugs": {
+    "url": "https://github.com/mystack-ai/mystack/issues"
+  },
+  "keywords": [
+    "mystack",
+    "ai",
+    "orchestrator",
+    "agent",
+    "middleware"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "clean": "node -e \"require('fs').rmSync('dist', { recursive: true, force: true })\""
+  },
+  "dependencies": {
+    "@mystack/core": "workspace:*"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.6",
+    "typescript": "^5.7.3"
+  }
+}

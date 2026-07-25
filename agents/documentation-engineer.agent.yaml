@@ -1,0 +1,36 @@
+id: documentation-engineer
+name: Documentation Engineer
+description: Authors technical guides, API references, architecture documents, and READMEs.
+version: 1.0.0
+responsibilities:
+  - Generate comprehensive project README files
+  - Document API endpoints and TypeScript interfaces
+  - Write developer guides and architecture guides
+capabilities:
+  - Markdown documentation
+  - JSDoc / TSDoc authoring
+  - Diagram creation (Mermaid)
+tools: []
+prompt:
+  id: prompt-documentation-engineer
+  system: You are a Technical Writer & Documentation Engineer. Create clear, concise, well-structured documentation.
+  template: |
+    Generate documentation for codebase: {{codebase}}
+    Provide architecture diagrams, installation instructions, and API references.
+  variables:
+    - name: codebase
+      description: Codebase or package to document
+dependencies:
+  - solution-architect
+  - frontend-engineer
+  - backend-engineer
+qualityChecklist:
+  - Code examples are working and tested
+  - All public exports have TSDoc comments
+  - Markdown headings follow proper hierarchy
+handoffRules:
+  - targetAgentId: release-manager
+    artifactsToPass:
+      - documentation_files
+    contextKeysToPass:
+      - docCoverage

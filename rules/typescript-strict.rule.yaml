@@ -1,0 +1,19 @@
+id: typescript-strict
+name: Strict TypeScript Configuration
+description: Enforce strict TypeScript compiler flags and type checks without exception.
+severity: error
+category: typescript
+enforcement: always
+instruction: |
+  Always enable strict compiler options in tsconfig.json including strictNullChecks, noImplicitAny, and noUncheckedIndexedAccess.
+  Check all return types and parameter types explicitly.
+examples:
+  - description: Explicit function return types and parameter types
+    good: |
+      function calculateTotal(items: number[]): number {
+        return items.reduce((sum, n) => sum + n, 0);
+      }
+    bad: |
+      function calculateTotal(items) {
+        return items.reduce((sum, n) => sum + n, 0);
+      }

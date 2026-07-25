@@ -1,0 +1,23 @@
+id: git
+name: Git Workflow
+description: Conventional commits, feature branch naming conventions, and pull request rules.
+version: 1.0.0
+category: practice
+tags:
+  - git
+  - pr
+  - conventional-commits
+instructions: |
+  Never commit directly to 'main'. Create feature branches (`feat/name` or `fix/name`).
+  Follow Conventional Commits specification: `feat:`, `fix:`, `docs:`, `refactor:`, `test:`.
+  Include clear PR descriptions summarizing changes and verification steps.
+examples:
+  - title: Conventional Commit Messages
+    description: Proper commit message structure
+    code: |
+      git checkout -b feat/add-user-authentication
+      git commit -m "feat(auth): add Supabase authentication provider"
+references:
+  - type: url
+    title: Conventional Commits
+    uri: https://www.conventionalcommits.org

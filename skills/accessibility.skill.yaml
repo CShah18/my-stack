@@ -1,0 +1,30 @@
+id: accessibility
+name: Accessibility (a11y)
+description: WCAG 2.2 Level AA accessibility rules for React and HTML interfaces.
+version: 1.0.0
+category: practice
+tags:
+  - a11y
+  - wcag
+  - aria
+instructions: |
+  Ensure all interactive elements have accessible names and aria-labels where needed.
+  Maintain a minimum 4.5:1 color contrast ratio for standard body text.
+  Support full keyboard navigation with visible focus rings (`focus-visible`).
+examples:
+  - title: Accessible Form Field
+    description: Accessible label binding to form input
+    code: |
+      <div>
+        <label htmlFor="email-input">Email Address</label>
+        <input
+          id="email-input"
+          type="email"
+          aria-required="true"
+          className="focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+references:
+  - type: url
+    title: WCAG 2.2 Guidelines
+    uri: https://www.w3.org/TR/WCAG22

@@ -1,0 +1,19 @@
+id: no-any
+name: No any Types
+description: Prohibit the usage of the TypeScript 'any' type across all codebase files.
+severity: error
+category: typescript
+enforcement: always
+instruction: |
+  Never use 'any' or 'as any'. Use 'unknown' with Zod schema validation or type narrowing when types are dynamic.
+examples:
+  - description: Using unknown with narrowing instead of any
+    good: |
+      function parsePayload(input: unknown): string {
+        if (typeof input === 'string') return input;
+        throw new Error('Expected string');
+      }
+    bad: |
+      function parsePayload(input: any): string {
+        return input.toString();
+      }

@@ -1,0 +1,151 @@
+{
+  "value": {
+    "executionId": "exec-1784966633648-mvd09",
+    "workflowId": "review",
+    "startedAt": "2026-07-25T08:03:53.648Z",
+    "variables": {},
+    "steps": [
+      {
+        "stepId": "step-1784966633649",
+        "agentId": "qa-engineer",
+        "status": "completed",
+        "input": {},
+        "output": {
+          "agentId": "qa-engineer",
+          "agentName": "QA Engineer",
+          "message": "Executed agent 'QA Engineer' successfully.",
+          "input": {},
+          "contextId": "exec-1784966633648-mvd09"
+        },
+        "startedAt": "2026-07-25T08:03:53.649Z",
+        "completedAt": "2026-07-25T08:03:53.649Z",
+        "retryCount": 0
+      },
+      {
+        "stepId": "step-1784966633650",
+        "agentId": "security-engineer",
+        "status": "completed",
+        "input": {},
+        "output": {
+          "agentId": "security-engineer",
+          "agentName": "Security Engineer",
+          "message": "Executed agent 'Security Engineer' successfully.",
+          "input": {},
+          "contextId": "exec-1784966633648-mvd09"
+        },
+        "startedAt": "2026-07-25T08:03:53.650Z",
+        "completedAt": "2026-07-25T08:03:53.650Z",
+        "retryCount": 0
+      },
+      {
+        "stepId": "step-1784966633650",
+        "agentId": "performance-engineer",
+        "status": "completed",
+        "input": {},
+        "output": {
+          "agentId": "performance-engineer",
+          "agentName": "Performance Engineer",
+          "message": "Executed agent 'Performance Engineer' successfully.",
+          "input": {},
+          "contextId": "exec-1784966633648-mvd09"
+        },
+        "startedAt": "2026-07-25T08:03:53.650Z",
+        "completedAt": "2026-07-25T08:03:53.650Z",
+        "retryCount": 0
+      }
+    ],
+    "status": "completed",
+    "logs": [
+      {
+        "timestamp": "2026-07-25T08:03:53.648Z",
+        "level": "info",
+        "message": "[Engine] Starting execution for workflow 'Comprehensive Code Review' (review)"
+      },
+      {
+        "timestamp": "2026-07-25T08:03:53.649Z",
+        "level": "warn",
+        "agentId": "qa-engineer",
+        "message": "[Orchestrator] Agent 'qa-engineer' depends on 'frontend-engineer' which has not been completed yet in this execution."
+      },
+      {
+        "timestamp": "2026-07-25T08:03:53.649Z",
+        "level": "warn",
+        "agentId": "qa-engineer",
+        "message": "[Orchestrator] Agent 'qa-engineer' depends on 'backend-engineer' which has not been completed yet in this execution."
+      },
+      {
+        "timestamp": "2026-07-25T08:03:53.649Z",
+        "level": "info",
+        "agentId": "qa-engineer",
+        "message": "[Orchestrator] Starting execution of agent 'QA Engineer' (qa-engineer)",
+        "data": {
+          "input": {}
+        }
+      },
+      {
+        "timestamp": "2026-07-25T08:03:53.649Z",
+        "level": "info",
+        "agentId": "qa-engineer",
+        "message": "[Orchestrator] Completed execution of agent 'QA Engineer' in 0ms",
+        "data": {
+          "status": "completed"
+        }
+      },
+      {
+        "timestamp": "2026-07-25T08:03:53.650Z",
+        "level": "warn",
+        "agentId": "security-engineer",
+        "message": "[Orchestrator] Agent 'security-engineer' depends on 'backend-engineer' which has not been completed yet in this execution."
+      },
+      {
+        "timestamp": "2026-07-25T08:03:53.650Z",
+        "level": "info",
+        "agentId": "security-engineer",
+        "message": "[Orchestrator] Starting execution of agent 'Security Engineer' (security-engineer)",
+        "data": {
+          "input": {}
+        }
+      },
+      {
+        "timestamp": "2026-07-25T08:03:53.650Z",
+        "level": "info",
+        "agentId": "security-engineer",
+        "message": "[Orchestrator] Completed execution of agent 'Security Engineer' in 0ms",
+        "data": {
+          "status": "completed"
+        }
+      },
+      {
+        "timestamp": "2026-07-25T08:03:53.650Z",
+        "level": "warn",
+        "agentId": "performance-engineer",
+        "message": "[Orchestrator] Agent 'performance-engineer' depends on 'frontend-engineer' which has not been completed yet in this execution."
+      },
+      {
+        "timestamp": "2026-07-25T08:03:53.650Z",
+        "level": "warn",
+        "agentId": "performance-engineer",
+        "message": "[Orchestrator] Agent 'performance-engineer' depends on 'backend-engineer' which has not been completed yet in this execution."
+      },
+      {
+        "timestamp": "2026-07-25T08:03:53.650Z",
+        "level": "info",
+        "agentId": "performance-engineer",
+        "message": "[Orchestrator] Starting execution of agent 'Performance Engineer' (performance-engineer)",
+        "data": {
+          "input": {}
+        }
+      },
+      {
+        "timestamp": "2026-07-25T08:03:53.650Z",
+        "level": "info",
+        "agentId": "performance-engineer",
+        "message": "[Orchestrator] Completed execution of agent 'Performance Engineer' in 0ms",
+        "data": {
+          "status": "completed"
+        }
+      }
+    ],
+    "completedAt": "2026-07-25T08:03:53.650Z"
+  }
+}

@@ -1,0 +1,23 @@
+id: nextjs-app-router
+name: Next.js App Router Best Practices
+description: Guidelines for Server Components, Client Components, Server Actions, and API Route Handlers in Next.js 15.
+version: 1.0.0
+category: framework
+tags:
+  - nextjs
+  - react
+  - typescript
+instructions: |
+  1. Prefer Server Components by default for data fetching.
+  2. Use 'use client' sparingly for interactive UI leaves.
+  3. Validate Server Action inputs with Zod schemas.
+  4. Co-locate route handlers in src/app/api directory.
+examples:
+  - title: Route Handler Pattern
+    description: Standard GET handler returning JSON
+    code: |
+      import { NextResponse } from 'next/server';
+      export async function GET() {
+        return NextResponse.json({ ok: true });
+      }
+references: []

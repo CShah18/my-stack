@@ -1,0 +1,33 @@
+id: docker
+name: Docker
+description: Multi-stage Docker builds, image optimization, and container security best practices.
+version: 1.0.0
+category: tool
+tags:
+  - docker
+  - containers
+  - devops
+instructions: |
+  Use multi-stage builds to minimize production image size.
+  Run containers as a non-root user for security.
+  Use .dockerignore to exclude node_modules, dist, and git history.
+examples:
+  - title: Multi-stage Dockerfile
+    description: Production Dockerfile for Node.js app
+    code: |
+      FROM node:20-alpine AS builder
+      WORKDIR /app
+      COPY package.json pnpm-lock.yaml ./
+      RUN corepack enable && pnpm install --frozen-lockfile
+      COPY . .
+      RUN pnpm build
+
+      FROM node:20-alpine AS runner
+      WORKDIR /app
+      COPY --from=builder /app/dist ./dist
+      USER node
+      CMD ["node", "dist/index.js"]
+references:
+  - type: url
+    title: Docker Documentation
+    uri: https://docs.docker.com

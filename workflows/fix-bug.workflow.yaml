@@ -1,0 +1,33 @@
+id: fix-bug
+name: Bug Fix Pipeline
+description: Reproduces a bug with a failing test, implements the fix, and verifies clean resolution.
+version: 1.0.0
+trigger: command
+variables:
+  - name: bugDescription
+    description: Observed error, stack trace, or unexpected behavior
+    required: true
+steps:
+  - id: step-qa-reproduce
+    agentId: qa-engineer
+    name: Reproduce Bug
+    description: Write a failing unit or integration test reproducing the issue
+    input:
+      source: variables
+    onFailure: halt
+
+  - id: step-fix-backend
+    agentId: backend-engineer
+    name: Implement Fix
+    description: Fix underlying bug logic in application code
+    input:
+      source: previous_step
+    onFailure: halt
+
+  - id: step-qa-verify
+    agentId: qa-engineer
+    name: Verify Fix Passes
+    description: Re-run test suite to confirm failing test now passes
+    input:
+      source: previous_step
+    onFailure: halt
