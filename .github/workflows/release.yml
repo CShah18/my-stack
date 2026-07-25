@@ -17,7 +17,7 @@ jobs:
     name: Publish to NPM
     runs-on: ubuntu-latest
     env:
-      ACTIONS_ALLOW_USE_UNSECURE_NODE20: 'true'
+      ACTIONS_RUNNER_FORCE_ACTIONS_NODE24: 'true'
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
